@@ -22,5 +22,8 @@
   "engines": {
     "node": "16.x"
   },
-  "homepage": "https://github.com/Daniellien2018/gymshark_FSP#readme"
+  "homepage": "https://github.com/Daniellien2018/gymshark_FSP#readme",
+  "dependencies": {
+    "react-redux": "^8.0.2"
+  }
 }
