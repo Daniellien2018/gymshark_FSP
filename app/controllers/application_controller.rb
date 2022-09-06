@@ -63,7 +63,7 @@ class ApplicationController < ActionController::API
         if request.accepts.first.html?
           raise error
         else
-          @message = "#{error.class} - #{error.message}"
+          @message = "#{error.message}"
           @stack = Rails::BacktraceCleaner.new.clean(error.backtrace)
           render 'api/errors/internal_server_error', status: :internal_server_error 
           logger.error "\n#{@message}:\n\t#{@stack.join("\n\t")}\n"
