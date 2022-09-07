@@ -37,26 +37,25 @@ function LoginFormPage() {
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
-      <label>
-        Username or Email
+      <div className='loginForm'>
+        <h1>Log Into My Gymshark</h1>
+        <label>Username or Email:</label>
         <input
           type="text"
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Password
+        <label>Password:</label>
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
-      <button type="submit">Log In</button>
-      <NavLink to="/signup">Sign Up</NavLink>
+        <button type="submit">Log In</button>
+        <NavLink to="/signup">Sign Up</NavLink>
+      </div>
     </form>
   );
 }

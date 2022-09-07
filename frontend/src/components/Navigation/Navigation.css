@@ -16,7 +16,7 @@
 .navTop > button{
     border: none;
     padding: 10px;
-    border-right: 1px solid grey;
+    border-right: 1px solid lightgrey;
     height: 35px;
     overflow: hidden;
     text-align: center;
@@ -26,7 +26,7 @@
 }
 .navTop > button:hover{
     cursor: pointer;
-    background-color: darkgrey;
+    background-color: grey;
 }
 
 .navBottom{
@@ -36,6 +36,7 @@
     justify-content: space-between;
     width: 100%;
     height: 4.35vh;
+    border-bottom: 1px solid lightgrey;
 }
 
 #logo{
