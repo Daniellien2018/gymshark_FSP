@@ -1,20 +1,51 @@
-
 .navBar{
+    width: 100%;
+    height: 50%;
+}
+.navTop{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 101%;
+    height: 35px;
+    background-color: rgb(238, 235, 235);
+    margin-top: -10px;
+    margin-left: -10px;
+    
+}
+.navTop > button{
+    border: none;
+    padding: 10px;
+    border-right: 1px solid grey;
+    height: 35px;
+    overflow: hidden;
+    text-align: center;
+}
+.navTop > button:last-child{
+    border-right: none;
+}
+.navTop > button:hover{
+    cursor: pointer;
+    background-color: darkgrey;
+}
+
+.navBottom{
     overflow: hidden;
     padding: 20px 10px; 
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    width: 100%;
+    height: 4.35vh;
 }
 
 #logo{
     font-size: 25px;
     font-weight: bold;
-    width: 25%;
-    height: 85%;
+    width: 110%;
+    height: 110%;
 }
 
-.navLeft{
+/* .navLeft{
     float: left;
     color: black;
     text-align: center;
@@ -38,4 +69,4 @@
     font-size: 18px;
     line-height: 25px;
     border-radius: 4px;;
-}
+} */

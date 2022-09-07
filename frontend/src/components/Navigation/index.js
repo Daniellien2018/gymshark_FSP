@@ -27,22 +27,34 @@ function Navigation() {
 
   return (
     <div className='navBar'>
-      <div className='navLeft'>
-        <NavLink exact to="/">
-          <img id="logo" src={logo} alt='logo'></img>
-        </NavLink>
-      </div>
-      <div className='navCenter'>
-        <button>Women's</button>
-        <button>Men's</button>
-        <button>Accessories</button>
+      <div className='navTop'>
+          <button>
+            <i class="fa-regular fa-user"></i>
+            {" "}My Account
+          </button>
+          <button>Blog</button>
+          <button>Newsletter</button>
+          <button>Help</button>
+          <button>Location</button>
       </div>
 
-      <div className='navRight'>
-        <button>
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        {sessionLinks}
+      <div className='navBottom'>
+        <div className='navLeft'>
+          <NavLink exact to="/">
+            <img id="logo" src={logo} alt='logo'></img>
+          </NavLink>
+        </div>
+        <div className='navCenter'>
+          <button>Women's</button>
+          <button>Men's</button>
+          <button>Accessories</button>
+        </div>
+        <div className='navRight'>
+          <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          {sessionLinks}
+        </div>
       </div>
     </div>
   );
