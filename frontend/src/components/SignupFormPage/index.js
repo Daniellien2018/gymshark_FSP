@@ -20,22 +20,7 @@ function SignupFormPage() {
     if (password === confirmPassword) {
       setErrors([]);
       return dispatch(sessionActions.signup({ email, username, password }))
-    //     .catch(async (res) => {
-    //     let data;
-    //     try {
-    //       // .clone() essentially allows you to read the response body twice
-    //       data = await res.clone().json();
-    //     } catch {
-    //       data = await res.text(); // Will hit this case if the server is down
-    //     }
-    //     if (data?.errors) setErrors(data.errors);
-    //     else if (data) setErrors([data]);
-    //     else setErrors([res.statusText]);
-    //   });
-    // }
-    // return setErrors(['Confirm Password field must be the same as the Password field']);
-
-    .catch(async (res) => {
+      .catch(async (res) => {
       let data;
       try {
         // .clone() essentially allows you to read the response body twice
@@ -48,8 +33,7 @@ function SignupFormPage() {
       else setErrors([res.statusText]);
     });
   }
-
-  return setErrors(['Please enter a valid username and email'])
+  setErrors(['Passwords do not match'])
  };
 
   return (
@@ -58,9 +42,8 @@ function SignupFormPage() {
       <div className="signUpForm">
         <h1>Create An Account</h1>
         <p>Sign up and you'll be able to manage your account, track orders, save products, and access easier returns</p>
-        <ul>
-          {/* {console.log({errors})} */}
-          {errors.map(error => <li key={error}>{error.messsage}</li>)}
+        <ul className="errors">
+          {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
         <label>Email</label>
           <input
