@@ -34,11 +34,11 @@ function LoginFormPage() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map(error => <li key={error}>{error}</li>)}
-      </ul>
       <div className='loginForm'>
         <h1>Log Into My Gymshark</h1>
+        <ul className='errors'>
+          {errors.map(error => <li key={error}>{error}</li>)}
+        </ul>
         <label>Username or Email:</label>
         <input
           type="text"

@@ -54,13 +54,14 @@ function SignupFormPage() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <ul>
-      {console.log({errors})}
-        {errors.map(error => <li key={error}>{error.messsage}</li>)}
-      </ul>
+      
       <div className="signUpForm">
         <h1>Create An Account</h1>
         <p>Sign up and you'll be able to manage your account, track orders, save products, and access easier returns</p>
+        <ul>
+          {/* {console.log({errors})} */}
+          {errors.map(error => <li key={error}>{error.messsage}</li>)}
+        </ul>
         <label>Email</label>
           <input
             type="text"

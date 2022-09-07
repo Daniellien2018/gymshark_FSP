@@ -46,28 +46,18 @@
     height: 110%;
 }
 
-/* .navLeft{
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-    border-radius: 4px;;
-}
-.navCenter{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .navRight{
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-    border-radius: 4px;;
-} */
+    padding-right: 30px;
+    height: 70px;
+    width: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: -20px;
+}
+.navRight > button{
+    border: none;
+    background-color: white;
+    margin: 10px;
+    
+}

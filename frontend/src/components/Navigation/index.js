@@ -12,15 +12,18 @@ function Navigation() {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <ProfileButton user={sessionUser}>
+          <i class="fa-regular fa-user"></i>
+      </ProfileButton>
     );
   } else {
     sessionLinks = (
       <>
+          <button>
             <NavLink to="/login">
               <i class="fa-regular fa-user"></i>
             </NavLink>
-            {/* <NavLink to="/signup">Sign Up</NavLink> */}
+          </button>
       </>
     );
   }
@@ -54,6 +57,9 @@ function Navigation() {
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
           {sessionLinks}
+          <button>
+            <i class="fa-solid fa-bag-shopping"></i>
+          </button>
         </div>
       </div>
     </div>
