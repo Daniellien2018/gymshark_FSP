@@ -70,5 +70,46 @@ ApplicationRecord.transaction do
     file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/5-Legacy+Drop+Arm+Tank.png')
     p10.photo.attach(io: file, filename: '5-Legacy+Drop+Arm+Tank.png')
 
+    p11 = Product.create(name: "Crest Joggers", price: 38.00, category: "Mens",  description: "If rest day were a range, it’d probably be Crest. Consistently comfortable and casually stylish, you can wear it anywhere and pair it with anything. A durable embroidered logo keeps it looking fresh no matter how many times you wear it, and a warm, incredibly soft interior keeps you comfortable however you spend your down time.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/6-Crest+Joggers.png')
+    p11.photo.attach(io: file, filename: '6-Crest+Joggers.png')
+
+    p12 = Product.create(name: "Essential Oversized Jogger", price: 50.00, category: "Mens",  description: "No gym bag is complete without the Oversized Joggers. A soft cotton build and stretchy rib panels pair with an oversized fit for full comfort, while a drawcord waist and side pockets provide no-fuss functionality, so you’re ready for training, commuting, or resting.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/7-Essential+Oversized+Jogger.png')
+    p12.photo.attach(io: file, filename: '7-Essential+Oversized+Jogger.png')
+
+    p13 = Product.create(name: "Crest Shorts", price: 28.00, category: "Mens",  description: "Show up and stand out in the Bold Shorts. The comfort and support of these gym shorts - provided by a cotton-polyester material and drawcord waistband – is matched by a powerful aesthetic created by bright colourways and a bold Gymshark graphic to the side of the leg.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/8-Bold+Shorts.png')
+    p13.photo.attach(io: file, filename: '8-Bold+Shorts.png')
+
+    p14 = Product.create(name: "Legacy Drop Arm Tank", price: 28.00, category: "Mens",  description: "If rest day were a range, it’d probably be Crest. Consistently comfortable and casually stylish, you can wear it anywhere and pair it with anything. A durable embroidered logo keeps it looking fresh no matter how many times you wear it, and a warm, incredibly soft interior keeps you comfortable however you spend your down time.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/9-Crest+Shorts.png')
+    p14.photo.attach(io: file, filename: '9-Crest+Shorts.png')
+
+    p15 = Product.create(name: "Legacy Shorts", price: 35.00, category: "Mens",  description: "The Legacy collection is all about Gymshark history, featuring an updated version of our classic screenprint logo. So turn up to your lifting workout in this reworked collection and start building your own legacy.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/10-Legacy+Shorts.png')
+    p15.photo.attach(io: file, filename: '10-Legacy+Shorts.png')
+
+    p16 = Product.create(name: "Legacy Drop Arm Hoodie", price: 42.00, category: "Mens",  description: "The Legacy collection takes it back to where it all started. With functional shapes and durable soft material, you can train with passion and power, every time, in an authentic lifting look. Then add in the revamped original Gymshark logo sitting loud and proud on every piece, and you’ve got a timeless classic that’ll never let you down. All that’s left is for you to put in the work, and start building your own legacy.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/11-Legacy+Drop+Arm+Hoodie.png')
+    p16.photo.attach(io: file, filename: '11-Legacy+Drop+Arm+Hoodie.png')
+
+    p17 = Product.create(name: "Legacy Hoodie", price: 48.00, category: "Mens",  description: "The Legacy collection takes it back to where it all started. With functional shapes and durable soft material, you can train with passion and power, every time, in an authentic lifting look. Then add in the revamped original Gymshark logo sitting loud and proud on every piece, and you’ve got a timeless classic that’ll never let you down. All that’s left is for you to put in the work, and start building your own legacy.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/12-Legacy+Hoodie.png')
+    p17.photo.attach(io: file, filename: '12-Legacy+Hoodie.png')
+
+    p18 = Product.create(name: "Crest Sweatshirt", price: 36.00, category: "Mens",  description: "If rest day were a range, it’d probably be Crest. Consistently comfortable and casually stylish, you can wear it anywhere and pair it with anything. A durable embroidered logo keeps it looking fresh no matter how many times you wear it, and a warm, incredibly soft interior keeps you comfortable however you spend your down time.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/13-Crest+Sweatshirt.png')
+    p18.photo.attach(io: file, filename: '13-Crest+Sweatshirt.png')
+
+    p19 = Product.create(name: "Sharkhead Infill Hoodie", price: 44.00, category: "Mens",  description: "Where a loud aesthetic meets a reliable build, the Sharkhead Infill Hoodie is chill-out ready. Spend your down time however you want thanks to a slim profile and soft fleece interior, and make a statement even on rest day with a bright and bold Gymshark graphic front-and-centre.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/14-Sharkhead+Infill+Hoodie.png')
+    p19.photo.attach(io: file, filename: '14-Sharkhead+Infill+Hoodie.png')
+
+    p20 = Product.create(name: "Sharkhead Infill Hoodie-bl", price: 44.00, category: "Mens",  description: "Where a loud aesthetic meets a reliable build, the Sharkhead Infill Hoodie is chill-out ready. Spend your down time however you want thanks to a slim profile and soft fleece interior, and make a statement even on rest day with a bright and bold Gymshark graphic front-and-centre.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/15-Sharkhead+Infill+Hoodie.png')
+    p20.photo.attach(io: file, filename: '15-Sharkhead+Infill+Hoodie.png')
+
+
 
   end
