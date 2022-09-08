@@ -15,12 +15,19 @@ const ProductIndex = () => {
 
     return(
         <>
-            <ul>
-                
-                {products.map(product=>(
-                   <ProductIndexItem product={product} key={product.id}></ProductIndexItem>
-                ))}
-            </ul>
+        <div>
+            <div id="top">
+                <h1>All Products</h1>
+            </div>
+            <div id="bot">
+                <ul id="products">
+                    {products.map(product=>(
+                    <ProductIndexItem product={product} key={product.id}></ProductIndexItem>
+                    ))}
+                </ul>    
+            </div>
+        </div>
+        
         </>
     )
 }

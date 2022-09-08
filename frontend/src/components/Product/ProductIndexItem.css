@@ -1,0 +1,33 @@
+.article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.article-text{
+    display: flex;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    width: 250px;
+    justify-content: space-between;
+    flex-direction: row;
+    
+}
+
+.product-photo{
+    width: 250px;
+    height: 300px;
+}
+#article-name{
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    color: rgb(80, 80, 80);
+    font-size: 18px;
+}
+#article-price{
+    font-weight: bold;
+    font-size: 18;
+}
+#article-category{
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    width: 250px;
+    color: darkgrey;
+    font-size: 15px;
+}

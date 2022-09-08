@@ -1,0 +1,25 @@
+#top{
+    background-color: rgb(238, 235, 235);
+    height: 15vh;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+h1{
+    display: flex;
+    justify-content: flex-start;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-left: 15vh;
+    
+}
+
+#products{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(5,1fr);
+    align-items: center;
+    row-gap: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
