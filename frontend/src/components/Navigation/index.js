@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
@@ -20,7 +20,7 @@ function Navigation() {
     sessionLinks = (
       <>
           <button>
-            <NavLink to="/login">
+            <NavLink exact to="/login">
               <i class="fa-regular fa-user"></i>
             </NavLink>
           </button>
@@ -47,10 +47,13 @@ function Navigation() {
             <img id="logo" src={logo} alt='logo'></img>
           </NavLink>
         </div>
-        <div className='navCenter'>
+        {/* <div className='navCenter'>
           <button>Women's</button>
           <button>Men's</button>
           <button>Accessories</button>
+        </div> */}
+        <div className='navCenter'>
+          <NavLink exact to="/products">Shop Now!</NavLink>
         </div>
         <div className='navRight'>
           <button>

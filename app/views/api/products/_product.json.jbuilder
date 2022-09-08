@@ -4,3 +4,5 @@ json.extract! product,
     :price,
     :description,
     :category
+
+json.photo_url product.photo.url 

@@ -6,7 +6,7 @@ class Api::ProductsController < ApplicationController
     end
 
     def show
-        @products = Product.find(params[:id])
+        @product = Product.find(params[:id])
     end
 
     private
