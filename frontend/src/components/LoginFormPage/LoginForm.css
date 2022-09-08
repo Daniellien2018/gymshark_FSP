@@ -10,3 +10,23 @@
     color: red;
     list-style: none;
 }
+label{
+    margin-top: 20px;
+}
+input{
+    height: 45px;
+    width: 250px;
+    border-color: black;
+}
+#login{
+    margin: 20px;
+    width: 250px;
+    height: 45px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    font-size: large;
+}
+#signup{
+    margin: 20px;
+}

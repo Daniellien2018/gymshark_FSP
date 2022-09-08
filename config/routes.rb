@@ -7,7 +7,15 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: :create
     resource :session, only: [:show, :create, :destroy]
+    resources :products, only: {:show, :index}
   end
+  
+  
+
+
+  get '*path', to: "static_pages#frontend_index", constraints: ->(req) {
+    req.path.exclude? 'rails/active_storage'
+  }
   # post 'api/test', to: 'application#test'
   # get '*path', to: "static_pages#frontend_index" #must be @bottom!
 end
