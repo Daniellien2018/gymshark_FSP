@@ -110,6 +110,26 @@ ApplicationRecord.transaction do
     file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/15-Sharkhead+Infill+Hoodie.png')
     p20.photo.attach(io: file, filename: '15-Sharkhead+Infill+Hoodie.png')
 
+    p21 = Product.create(name: "Rest Day Sweats Joggers", price: 56.00, category: "Womens",  description: "Rest up in the Rest Day Sweats Joggers. These versatile joggers are designed with our thickest, heaviest fabric yet so you can feel the difference when you wear it. The clean aesthetic makes these joggers the next staple piece in your wardrobe. Wear them to and from the gym, to warm up, or just about anywhere on your next rest day too.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/1-Rest+Day+Sweats+Joggers.png')
+    p21.photo.attach(io: file, filename: '1-Rest+Day+Sweats+Joggers.png')
+
+    p22 = Product.create(name: "Vital Seamless 2.0 Leggings", price: 58.00, category: "Womens",  description: "Whatever conditioning means to you, Vital's got something to help you feel, and perform, your best. Seamless designs mean comfort and confidence from workout to time out. The new looser, long-length styles offer full coverage for those who want it. And sweat-wicking tech mean you’ll be cool, dry and focused on the days you’re moving more. Because you can do it all, and so can Vital.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/2-Vital+Seamless+2.0+Leggings.png')
+    p22.photo.attach(io: file, filename: '2-Vital+Seamless+2.0+Leggings.png')
+
+    p23 = Product.create(name: "Adapt Animal Seamless Leggings", price: 60.00, category: "Womens",  description: "The collection made for lifting, unleash your wild side in Adapt Animal. Sweat-wicking finishing, seamless stretch fabric and zero-distraction designs lets you lift in comfort and support every day, in every way.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/3-Adapt+Animal+Seamless+Leggins.png')
+    p23.photo.attach(io: file, filename: '3-Adapt+Animal+Seamless+Leggins.png')
+
+    p24 = Product.create(name: "Rest Day Sweats Joggers", price: 56.00, category: "Womens",  description: "Rest up in the Rest Day Sweats Joggers. These versatile joggers are designed with our thickest, heaviest fabric yet so you can feel the difference when you wear it. The clean aesthetic makes these joggers the next staple piece in your wardrobe. Wear them to and from the gym, to warm up, or just about anywhere on your next rest day too.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/1-Rest+Day+Sweats+Joggers.png')
+    p24.photo.attach(io: file, filename: '1-Rest+Day+Sweats+Joggers.png')
+
+    p25 = Product.create(name: "Rest Day Sweats Joggers", price: 56.00, category: "Womens",  description: "Rest up in the Rest Day Sweats Joggers. These versatile joggers are designed with our thickest, heaviest fabric yet so you can feel the difference when you wear it. The clean aesthetic makes these joggers the next staple piece in your wardrobe. Wear them to and from the gym, to warm up, or just about anywhere on your next rest day too.")
+    file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/1-Rest+Day+Sweats+Joggers.png')
+    p25.photo.attach(io: file, filename: '1-Rest+Day+Sweats+Joggers.png')
+
 
 
   end
