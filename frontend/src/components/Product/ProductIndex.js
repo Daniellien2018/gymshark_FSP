@@ -17,12 +17,12 @@ const ProductIndex = () => {
         <>
         <div>
             <div id="top">
-                <h1>All Products</h1>
+                <h1 id="title">All Products</h1>
             </div>
             <div id="bot">
                 <ul id="products">
                     {products.map(product=>(
-                    <ProductIndexItem product={product} key={product.id}></ProductIndexItem>
+                        <ProductIndexItem product={product} key={product.id}></ProductIndexItem>
                     ))}
                 </ul>    
             </div>

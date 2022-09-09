@@ -18,10 +18,31 @@ const ProductShow = () => {
 
     return(
         <>
-            <h1>{product.name}</h1>
-            <span>{product.price}</span>
-            <span>{product.category}</span>
-            <span>{product.description}</span>
+        <div className="main-div">
+            <p id="route">Home/All Products/{product.category}/{product.name}</p>
+            <div className="product-div">
+                <div className="product-image">
+                </div>
+                <div className="product-details">
+                    <div className="product-text">
+                        <p>{product.name}</p>
+                        <p>{product.price}</p>
+                    </div>
+                    <div id="product-cat">
+                        <p>{product.category}</p>
+                    </div>
+                    <div id="product-desc">
+                        <p>{product.description}</p>
+                    </div>
+                    <div className="product-info">
+                        <p>I am info</p>
+                        <p>I am also info</p> 
+                    </div>
+                </div>
+            </div>
+            <div className="review-div">
+            </div>
+        </div>
         </>
     )
 }

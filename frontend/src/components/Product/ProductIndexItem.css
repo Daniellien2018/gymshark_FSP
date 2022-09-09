@@ -7,8 +7,10 @@
     display: flex;
     font-family: Montserrat, Helvetica, Arial, sans-serif;
     width: 250px;
+    height: 60pxI;
     justify-content: space-between;
     flex-direction: row;
+    align-items: center;
     
 }
 
@@ -19,15 +21,19 @@
 #article-name{
     font-family: Montserrat, Helvetica, Arial, sans-serif;
     color: rgb(80, 80, 80);
-    font-size: 18px;
+    font-size: 16px;
+    width: 160px;
+    height: 40px;
 }
 #article-price{
     font-weight: bold;
-    font-size: 18;
+    font-size: 16;
+    width: 90px;
+    height: 40px;
 }
 #article-category{
     font-family: Montserrat, Helvetica, Arial, sans-serif;
     width: 250px;
     color: darkgrey;
-    font-size: 15px;
+    font-size: 14px;
 }

@@ -78,11 +78,11 @@ ApplicationRecord.transaction do
     file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/7-Essential+Oversized+Jogger.png')
     p12.photo.attach(io: file, filename: '7-Essential+Oversized+Jogger.png')
 
-    p13 = Product.create(name: "Crest Shorts", price: 28.00, category: "Mens",  description: "Show up and stand out in the Bold Shorts. The comfort and support of these gym shorts - provided by a cotton-polyester material and drawcord waistband is matched by a powerful aesthetic created by bright colourways and a bold Gymshark graphic to the side of the leg.")
+    p13 = Product.create(name: "Bold Shorts", price: 30.00, category: "Mens",  description: "Show up and stand out in the Bold Shorts. The comfort and support of these gym shorts - provided by a cotton-polyester material and drawcord waistband is matched by a powerful aesthetic created by bright colourways and a bold Gymshark graphic to the side of the leg.")
     file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/8-Bold+Shorts.png')
     p13.photo.attach(io: file, filename: '8-Bold+Shorts.png')
 
-    p14 = Product.create(name: "Legacy Drop Arm Tank", price: 28.00, category: "Mens",  description: "If rest day were a range, it'd probably be Crest. Consistently comfortable and casually stylish, you can wear it anywhere and pair it with anything. A durable embroidered logo keeps it looking fresh no matter how many times you wear it, and a warm, incredibly soft interior keeps you comfortable however you spend your down time.")
+    p14 = Product.create(name: "Crest Shorts", price: 28.00, category: "Mens",  description: "If rest day were a range, it'd probably be Crest. Consistently comfortable and casually stylish, you can wear it anywhere and pair it with anything. A durable embroidered logo keeps it looking fresh no matter how many times you wear it, and a warm, incredibly soft interior keeps you comfortable however you spend your down time.")
     file = URI.open('https://gymshark-seed.s3.us-west-1.amazonaws.com/9-Crest+Shorts.png')
     p14.photo.attach(io: file, filename: '9-Crest+Shorts.png')
 

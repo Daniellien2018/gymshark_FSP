@@ -34,7 +34,7 @@
     padding: 20px 10px; 
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 99%;
     height: 4.35vh;
     border-bottom: 1px solid lightgrey;
 }

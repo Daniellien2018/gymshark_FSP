@@ -14,6 +14,8 @@ class Product < ApplicationRecord
     validates :name, uniqueness: true, presence: true
     validates :price, presence: true
     
+    has_many :reviews,
+        dependent: :destroy
     has_one_attached :photo
 
 end
