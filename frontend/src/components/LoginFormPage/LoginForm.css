@@ -27,6 +27,24 @@ input{
     color: white;
     font-size: large;
 }
+#login:hover{
+    cursor: pointer;
+    background-color: rgb(24, 24, 24);
+}
+#demo-login{
+    margin: 20px;
+    width: 250px;
+    height: 45px;
+    margin-top:-5px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    font-size: large;
+}
+#demo-login:hover{
+    cursor: pointer;
+    background-color: rgb(24, 24, 24);
+}
 #signup{
     margin: 20px;
 }

@@ -1,0 +1,10 @@
+h2{
+    display: flex;
+    justify-content: flex-start;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-left: 15vh;
+}
+
+.product-div{
+    display: flex;
+}

@@ -12,16 +12,18 @@ const ProductShow = () => {
 
     useEffect(()=>{
         dispatch(fetchProduct(productId))
-    }, [])//productId
-    
+    }, [productId])
+
+    const photo = product.photoURL
     
 
     return(
         <>
         <div className="main-div">
-            <p id="route">Home/All Products/{product.category}/{product.name}</p>
+            <h2 id="route">Home/All Products/{product.category}/{product.name}</h2>
             <div className="product-div">
                 <div className="product-image">
+                    {/* <img src={photo}>this is photo</img> */}
                 </div>
                 <div className="product-details">
                     <div className="product-text">
