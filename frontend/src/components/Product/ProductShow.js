@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProduct, getProduct } from "../../store/products";
+import productsReducer, { fetchProduct, getProduct } from "../../store/products";
 import "./ProductShow.css"
 
 const ProductShow = () => {
@@ -14,35 +14,54 @@ const ProductShow = () => {
         dispatch(fetchProduct(productId))
     }, [productId])
 
-    const photo = product.photoURL
+    if (!product){
+        return null
+    }
     
 
     return(
         <>
         <div className="main-div">
-            <h2 id="route">Home/All Products/{product.category}/{product.name}</h2>
+            <h3 id="route">Home/All Products/{product.category}/{product.name}</h3>
             <div className="product-div">
-                <div className="product-image">
-                    {/* <img src={photo}>this is photo</img> */}
+                <div className="product-image-box">
+                    <img id="product-image" src={product.photoUrl}/>
                 </div>
                 <div className="product-details">
-                    <div className="product-text">
-                        <p>{product.name}</p>
-                        <p>{product.price}</p>
+                    <div className="product-text"> 
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa-solid fa-star-half"></span>
+                        <div id="name-price">
+                            <p>{product.name}</p>
+                            <p>${product.price}.00 USD</p>
+                        </div>
                     </div>
                     <div id="product-cat">
-                        <p>{product.category}</p>
+                        <p>Gymshark {product.category}</p>
                     </div>
                     <div id="product-desc">
-                        <p>{product.description}</p>
+                        <p>Description: {product.description}</p>
                     </div>
                     <div className="product-info">
-                        <p>I am info</p>
-                        <p>I am also info</p> 
+                        <ul>
+                            <i id="product-info-logo" class="fa-solid fa-rotate-left"></i> Free Returns On All Orders
+                        </ul>
+                        <ul>
+                            <i id="product-info-logo" class="fa-solid fa-box-open"></i> Free Standard Delivery over $75
+                        </ul> 
+                        <ul>
+                            <i id="product-info-logo" class="fa-solid fa-truck-fast"></i> Free Express over $150
+                        </ul>
+                    </div>
+                    <div id="add-to-cart-button">
+                        <button id="add-to-cart" type="submit">ADD TO BAG</button>
                     </div>
                 </div>
             </div>
-            <div className="review-div">
+            <div className="review-div">Hello i am review
             </div>
         </div>
         </>

@@ -33,10 +33,9 @@ function LoginFormPage() {
   }
 
   const handleDemoSubmit = e => {
-    // e.preventDefault();
-    return dispatch(sessionActions.login({username: "demo-lition", email: "demo@user.io", password: "password"}))
-    console.log('hi')
-    // return dispatch(sessionActions.login({username: "demo-man", email: "demo@user.io", password: "password"}))
+    e.preventDefault();
+    // console.log('hi')
+    return dispatch(sessionActions.login({credential: "demo@user.io", password: 'password'}))
   }
 
   return (
@@ -61,9 +60,7 @@ function LoginFormPage() {
           required
         />
         <button id='login' type="submit">LOG IN</button>
-        {/* <div > */}
-          <button id='demo-login' type="submit" onClick={handleDemoSubmit}>DEMO LOGIN</button>
-        {/* </div> */}
+        <button id='demo-login' type="submit" onClick={handleDemoSubmit}>DEMO LOGIN</button>
         <NavLink id='signup' to="/signup">Create An Account</NavLink>
       </div>
     </form>

@@ -13,8 +13,6 @@ const ProductIndexItem = ({product}) => {
                 <img className="product-photo" src={photo}></img>
             </Link>
             <div className="article-text">
-                {/* <span>{product.name}</span>
-                <span>{product.price}</span> */}
                 <p id="article-name">{product.name}</p>
                 <p id="article-price">${product.price}.00 USD</p>
             </div>
