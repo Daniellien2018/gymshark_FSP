@@ -20,7 +20,13 @@ export const addReviews = reviews => ({
     payload: reviews
 })
 
-
+export const getProductReviews = productId => state => {
+    Object.values(state.reviews)
+            .filter(review=> review.productId === parseInt(productId))
+            .map(review => ({
+                ...review, author: state.users[review.authorId] ?. username
+            }))
+};
 
 export const createReview = (review) => async dispatch => {
     const res = await csrfFetch("/api/reviews", {
@@ -47,5 +53,23 @@ export const destroyReview = (reviewId) => async dispatch => {
 const reviewsReducer = (state={}, action) => {
     Object.freeze(state)
 
-    
+    switch(action.type){
+        case ADD_REVIEW:{
+            const review = action.payload;
+            return { ...state, [review.id] : review}
+        }
+        case ADD_REVIEWS:{
+            const reviews = action.payload;
+            return { ...state, ...reviews}
+        }
+        case REMOVE_REVIEWS:{
+            const review = action.payload;
+            const { [review.id]: _remove, ...newState } = state;
+            return newState
+        }
+        default:
+            return state;
+    }    
 }
+
+export default reviewsReducer;
