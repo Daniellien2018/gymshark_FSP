@@ -7,4 +7,18 @@ p{
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    background-color: rgb(238, 235, 235);
+    border-top: 1px solid black;
+    width: 70%;
+    margin-left: 10vw;
+    padding-left: 10vw;
+    box-shadow: 0px 0px 10px 5px grey;
+}
+.review-box + .review-box{
+    margin-top: 5vh;
+}
+
+#rating{
+    width: 100%;
+    display: flex;
 }

@@ -33,7 +33,8 @@ const ProductShow = () => {
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
-                        <span class="fa-solid fa-star-half"></span>
+                        <span class="fa fa-star checked"></span>
+                        {/* <span class="fa-solid fa-star-half"></span> */}
                         <div id="name-price">
                             <p>{product.name}</p>
                             <p>${product.price}.00 USD</p>

@@ -11,6 +11,10 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
+    def show
+        render :show
+    end
+
     def destroy
         @review = current_user.reviews.find(params[:id])
         unless @review

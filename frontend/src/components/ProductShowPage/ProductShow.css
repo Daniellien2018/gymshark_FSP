@@ -41,6 +41,7 @@ h3{
     margin-top: -3vh;
     font-size: 14px;
     color: grey;
+    display: flex;
 }
 #product-desc{
     font-family: Montserrat, Helvetica, Arial, sans-serif;
