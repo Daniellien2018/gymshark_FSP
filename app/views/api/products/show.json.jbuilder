@@ -7,7 +7,7 @@ end
 
     json.reviews do
         json.set! review.id do
-            json.extract! review, :id, :review, :rating, :product_id, :author_id, :created_at, :updated_at
+            json.extract! review, :id, :body, :rating, :product_id, :author_id, :created_at, :updated_at
         end
     end
 

@@ -23,8 +23,11 @@ const usersReducer = (state={}, action) => {
             const users = action.payload
             return {...state, ...users}
         case RECEIVE_PRODUCT: {
-            const users = action.payload.users;
-            return users;
+            if (action.payload.users) {
+                return action.payload.users
+            } else {
+                return state;
+            }
         }
         default:
             return state

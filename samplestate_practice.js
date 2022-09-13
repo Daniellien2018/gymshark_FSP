@@ -26,7 +26,7 @@
 //         review: {
 //             1:{
 //                 id: 1,
-//                 review: 'this is a comfortable hoodie',
+//                 body: 'this is a comfortable hoodie',
 //                 user_id: 1,
 //                 product_id: 1
 //             }

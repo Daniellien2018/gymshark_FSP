@@ -24,19 +24,28 @@ export const getProductReviews = productId => state => {
     Object.values(state.reviews)
             .filter(review=> review.productId === parseInt(productId))
             .map(review => ({
-                ...review, author: state.users[review.authorId] ?. username
+            ...review, author: state.users[review.authorId] ?. username
             }))
 };
 
+
+
 export const createReview = (review) => async dispatch => {
+    
+    console.log("hi from before csrfFetch")
     const res = await csrfFetch("/api/reviews", {
         method: "POST",
-        body: JSON.stringify(review)
+        body: JSON.stringify(review),
+        headers: {
+            "Content-Type": 'application/json',
+            // "Accept" : 'application/json'
+        }
     });
+
     const reviewData = await res.json()
-    dispatch(addReview(reviewData.review))
-    dispatch(addUser(reviewData.addUser))
-    dispatch(receiveProduct(reviewData.product))
+    dispatch(addReview(reviewData))
+    // dispatch(addUser(reviewData.addUser))
+    // dispatch(receiveProduct(reviewData.product))
     return res
 }
 
@@ -44,32 +53,38 @@ export const destroyReview = (reviewId) => async dispatch => {
     const res = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: "DELETE",
     })
-    const reviewData = await res.json();
-    dispatch(removeReview(reviewData.review))
-    dispatch(receiveProduct(reviewData.product))
-    return res
+    // const reviewData = await res.json();
+    // dispatch(removeReview(reviewData.review))
+    dispatch(removeReview(reviewId))
+    // dispatch(receiveProduct(reviewData.product))
+    // return res
 }
 
 const reviewsReducer = (state={}, action) => {
     Object.freeze(state)
-
+    const newState = {...state}
+    // console.log("IN REVIEW REDUCER", action)
     switch(action.type){
         case ADD_REVIEW:{
             const review = action.payload;
-            return { ...state, [review.id] : review}
+            return { ...state, [review.id]: review}
         }
         case ADD_REVIEWS:{
             return action.payload.review;
-            // return { ...state, ...reviews}
         }
         case REMOVE_REVIEWS:{
-            const review = action.payload;
-            const { [review.id]: _remove, ...newState } = state;
+            // const review = action.payload;
+            // const { [review.id]: _remove, ...newState } = state;
+            // return newState
+            delete newState[action.payload]
             return newState
         }
         case RECEIVE_PRODUCT: {
-            const reviews = action.payload.reviews;
-            return reviews;
+            if (action.payload.reviews) {
+                return action.payload.reviews
+            } else {
+                return state;
+            }
         }
         default:
             return state;

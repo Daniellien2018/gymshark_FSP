@@ -3,7 +3,7 @@ class Api::ReviewsController < ApplicationController
     before_action :require_logged_in
 
     def create
-        @review = current_user.reviews.(review_params)
+        @review = Review.new(review_params)
         if @review.save
             render :show
         else
@@ -31,6 +31,6 @@ class Api::ReviewsController < ApplicationController
     private
 
     def review_params
-        require(:review).permit(:review, :rating, :product_id, :author_id)
+        params.require(:review).permit(:body, :rating, :product_id, :author_id)
     end
 end

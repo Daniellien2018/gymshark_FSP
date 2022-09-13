@@ -1,0 +1,60 @@
+.background-blur{
+    position: fixed;
+    top: 0;
+    background-color:#d1d2d4;
+    opacity: .5;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+.background-modal{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 20vh;
+    left: 25vw;
+    height: 50vh;
+    width: 50vw;
+    border-radius: 15px;
+    z-index: 4;
+    overflow: hidden;
+}
+.review-modal{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    overflow: hidden;
+}
+.review-form{
+    display: block;
+    align-items: column;
+}
+#product-title{
+    margin-top: 15px;
+    font-size: 25px;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+}
+#product-cat-modal{
+    margin-top: 15px;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    color: (238, 235, 235);
+}
+.rating-box{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+#rating-stars{
+    display: flex;
+    margin-bottom: 3px;
+    margin-top: -10px;
+}
+#rating{
+    width: 400px;
+    display: none;
+}
+input[type="radio"]{
+    display: none;
+}

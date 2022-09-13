@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Daniellien2018/gymshark_FSP#readme",
   "dependencies": {
+    "react-icons": "^4.4.0",
     "react-redux": "^8.0.2"
   }
 }

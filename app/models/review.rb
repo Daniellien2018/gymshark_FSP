@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-    validates :review, presence: true
+    validates :body, presence: true
     validates :rating, inclusion: {in: 1..5, message: "Rating must be between 1 and 5"}
     validate :not_a_duplicate
 

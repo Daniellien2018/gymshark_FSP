@@ -7,3 +7,20 @@
     text-transform: uppercase;
     margin-top: 20vh;
 }
+#review-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#write-review{
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: white;
+    cursor: pointer;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+#write-review:hover{
+    background-color: lightgrey;
+}

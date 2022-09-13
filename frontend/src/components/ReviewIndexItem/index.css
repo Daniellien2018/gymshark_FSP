@@ -23,3 +23,8 @@ p{
     width: 100%;
     display: flex;
 }
+#top-box{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

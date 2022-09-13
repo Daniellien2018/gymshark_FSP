@@ -1,10 +1,60 @@
 #valkrae{
     width: 100%;
+    position: relative;
 }
-#tenYears{
+#valk-buttons-box{
+    width: 30vw;
+    height: 10vh;
+    position: absolute;
+    top: 90vh;
+    right: 35vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#valk-shop{
+    height: 6vh;
+    width: 50vw;
+    border: 1px solid grey;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-right: 10px;
+    color: black;
+    background-color: RGB(255, 255, 255);
+    cursor: pointer;
+}
+#valk-shop2{
+    height: 6vh;
+    width: 50vw;
+    border: 1px solid grey;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-left: 10px;
+    background-color: RGB(102, 105, 110);
+    color: white;
+}
+
+#valk-shop2:hover{
+    cursor: pointer;
+    background-color: grey;
+}
+#valk-nav{
+    text-decoration: none;
+}
+#valk-nav > .active > a{
+    background-color: black;
+}
+
+/* #tenYears{
     width: 100%;
     margin-top: 5px;
-}
+} */
 #apex{
     width: 100%;
     margin-top: 5px;
