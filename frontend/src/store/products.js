@@ -40,8 +40,8 @@ export const fetchProducts = () => async dispatch =>{
 
 export const fetchProduct = productId => async dispatch =>{
     const res = await csrfFetch(`/api/products/${productId}`) //productId
-    const product = await res.json()
-    dispatch(receiveProduct(product))
+    const data = await res.json()
+    dispatch(receiveProduct(data));
     return res
 }
 

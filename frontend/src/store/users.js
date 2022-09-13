@@ -1,3 +1,5 @@
+import { RECEIVE_PRODUCT } from "./products"
+
 export const ADD_USER = `users/ADD_USER`
 export const ADD_USERS = `users/ADD_USERS`
 
@@ -20,6 +22,10 @@ const usersReducer = (state={}, action) => {
         case ADD_USERS:
             const users = action.payload
             return {...state, ...users}
+        case RECEIVE_PRODUCT: {
+            const users = action.payload.users;
+            return users;
+        }
         default:
             return state
     }

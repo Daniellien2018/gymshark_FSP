@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import productsReducer, { fetchProduct, getProduct } from "../../store/products";
 import "./ProductShow.css"
+import ReviewIndex from "../ReviewIndex"
 
 const ProductShow = () => {
     const dispatch = useDispatch();
@@ -60,7 +61,7 @@ const ProductShow = () => {
                     </div>
                 </div>
             </div>
-            <div className="review-div">Hello i am review
+            <div className="review-div"><ReviewIndex product={product}/>
             </div>
         </div>
         </>

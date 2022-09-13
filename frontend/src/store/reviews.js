@@ -1,6 +1,6 @@
 import csrfFetch from "./csrf";
 import {addUser} from "./users"
-import {addProduct} from "./products"
+import {receiveProduct, RECEIVE_PRODUCT} from "./products"
 
 const ADD_REVIEW = `reviews/ADD_REVIEW`
 const ADD_REVIEWS =  `reviews/ADD_REVIEWS`
@@ -36,7 +36,7 @@ export const createReview = (review) => async dispatch => {
     const reviewData = await res.json()
     dispatch(addReview(reviewData.review))
     dispatch(addUser(reviewData.addUser))
-    dispatch(addProduct(reviewData.product))
+    dispatch(receiveProduct(reviewData.product))
     return res
 }
 
@@ -46,7 +46,7 @@ export const destroyReview = (reviewId) => async dispatch => {
     })
     const reviewData = await res.json();
     dispatch(removeReview(reviewData.review))
-    dispatch(addProduct(reviewData.product))
+    dispatch(receiveProduct(reviewData.product))
     return res
 }
 
@@ -59,13 +59,17 @@ const reviewsReducer = (state={}, action) => {
             return { ...state, [review.id] : review}
         }
         case ADD_REVIEWS:{
-            const reviews = action.payload;
-            return { ...state, ...reviews}
+            return action.payload.review;
+            // return { ...state, ...reviews}
         }
         case REMOVE_REVIEWS:{
             const review = action.payload;
             const { [review.id]: _remove, ...newState } = state;
             return newState
+        }
+        case RECEIVE_PRODUCT: {
+            const reviews = action.payload.reviews;
+            return reviews;
         }
         default:
             return state;
