@@ -13,9 +13,16 @@ const ReviewIndexItem = ({ review }) => {
             }
         }
     }
-
-
+    const products = useSelector(state => Object.values(state.products))
+    const getProduct = () =>{
+        for (let product of products){
+            if (review.productId === product.id){
+                return product.name
+            }
+        }
+    }
     
+        
     const starRating = () =>{
         let rate = review.rating
         if (rate === 1){
@@ -61,18 +68,19 @@ const ReviewIndexItem = ({ review }) => {
         }
     }
     
-    const date = () =>{
-        let time = review.createdAt
+    // const date = () =>{
+    //     let time = review.createdAt
 
-    }
+    // }
 
     return(
         <>
         <div className="review-box">
             <h2 id="rating">Rating:{starRating()}</h2>
+            <p>{getProduct()}</p>
             <p>{review.review}</p>
-            <p>{getName()}</p>
-            <p>{review.createdAt}</p>
+            <p>User: {getName()}</p>
+            <p>Posted On: {review.createdAt}</p>
             {/* <p>{review.updatedAt}</p> */}
         </div>
         </>

@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import ProductIndex from './components/ProductIndexPage/ProductIndex';
 import ProductShow from './components/ProductShowPage/ProductShow';
+import HomePage from './components/HomePage'
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
           <Route exact path="/products/:productId">
             <ProductShow/>
           </Route>
-          <Route exact path="/" />
+          <Route exact path="/" >
+            <HomePage/>
+          </Route>
         </Switch>
         
     </>
