@@ -35,7 +35,6 @@ export const fetchProducts = () => async dispatch =>{
     const res = await csrfFetch(`/api/products`)
     const products = await res.json()
     dispatch(receiveProducts(products))
-    
 }
 
 export const fetchProduct = productId => async dispatch =>{
@@ -54,7 +53,7 @@ const productsReducer = (state={}, action) => {
             newState[action.payload.product.id] = action.payload.product;
             return newState
         case RECEIVE_PRODUCTS:
-            return action.payload.products
+            return {...action.payload.products }
         default:
             return newState
     }

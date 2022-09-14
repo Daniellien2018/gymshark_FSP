@@ -2,8 +2,7 @@ json.product do
     json.partial! '/api/products/product', product: @product
 end
 
-
- @product.reviews.each do |review|
+@product.reviews.each do |review|
 
     json.reviews do
         json.set! review.id do

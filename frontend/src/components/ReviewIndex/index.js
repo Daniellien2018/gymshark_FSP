@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
+import { NavLink } from "react-router-dom";
 import { fetchProduct } from "../../store/products";
 import { getProductReviews } from "../../store/reviews";
 import ProductIndexItem from "../ProductIndexPage/ProductIndexItem";
@@ -17,16 +18,32 @@ const ReviewIndex = ({product}) => {
     const [selectedReview, setSelectedReview] = useState();
 
     let form; 
-
-    // if (sessionUser){
-    //     form = (
-    //         <ReviewForm/>
-    //     )
-    // }else{
-    //     form = (
-    //         <div></div>
-    //     )
-    // }
+    if (sessionUser){
+        form = (
+            <button id="write-review" onClick={() => setShowReviewForm(true)}>Write a Review</button>
+        )
+    }else{
+        form = (
+            <div>
+                <p>Must be logged in to write a review</p>
+                {/* <NavLink exact to={"/login"}>Log In Here!</NavLink> */}
+            </div>
+        )
+    }
+    let reviewShow;
+    if (reviews.length > 0){
+        reviewShow = (
+            <div>
+            {reviews.map(review => (
+                <ReviewIndexItem review={review} key={review.id}/>
+            ))}
+            </div>
+        )
+    }else{
+        reviewShow = (
+            <div><p>There are no reviews for this product yet</p></div>
+        )
+    }
     
 
     return(
@@ -35,11 +52,13 @@ const ReviewIndex = ({product}) => {
                 <ul>
                     <h2 id="review-section">Reviews</h2>
                     <div id="review-box">
-                        <button id="write-review" onClick={() => setShowReviewForm(true)}>Write a Review</button>
+                        {form}
+                        {/* <button id="write-review" onClick={() => setShowReviewForm(true)}>Write a Review</button> */}
                     </div>
-                    {reviews.map(review => (
+                    {reviewShow}
+                    {/* {reviews.map(review => (
                         <ReviewIndexItem review={review} key={review.id}/>
-                    ))}
+                    ))} */}
                 </ul>
             </div>
             {showReviewForm && <ReviewForm setShowReviewForm={setShowReviewForm} product={product} selectedReview={selectedReview} />}

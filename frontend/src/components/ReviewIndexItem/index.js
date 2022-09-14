@@ -11,6 +11,8 @@ const ReviewIndexItem = ({ review }) => {
     const dispatch = useDispatch();
     const [showReviewForm, setShowReviewForm] = useState(false)
     const [selectedReview, setSelectedReview] = useState();
+    const sessionUser = useSelector(state => state.session.user)
+    
     
     const users = useSelector(state => Object.values(state.users))
     const getName = () => {
@@ -28,7 +30,6 @@ const ReviewIndexItem = ({ review }) => {
             }
         }
     }
-
 
     const starRating = () =>{
         let rate = review.rating
@@ -85,12 +86,9 @@ const ReviewIndexItem = ({ review }) => {
             )
         }
     }
-
-    return(
-        <>
-        <div className="review-box">
-            <div id="top-box">
-                <h2 id="rating">Rating:{starRating()}</h2>
+    let deleteUpdateButtons;
+    if (sessionUser && sessionUser.id === review.authorId ){
+        deleteUpdateButtons = (
                 <div id="edit-delete-box">
                     <button id="delete-review-button">
                         <div id="delete-review" onClick={() => dispatch(destroyReview(review.id))}>Delete Review</div>
@@ -106,6 +104,19 @@ const ReviewIndexItem = ({ review }) => {
                         >Edit Review</div>
                     </button>
                 </div>
+        )
+    }else{
+        deleteUpdateButtons = (
+            <div></div>
+        )
+    }
+
+    return(
+        <>
+        <div className="review-box">
+            <div id="top-box">
+                <h2 id="rating">Rating:{starRating()}</h2>
+                {deleteUpdateButtons}
             </div>
             <p>{getProduct()}</p>
             <p>{review.body}</p>
