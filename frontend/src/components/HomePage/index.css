@@ -1,3 +1,4 @@
+/* Valk */
 #valkrae{
     width: 100%;
     position: relative;
@@ -26,6 +27,9 @@
     background-color: RGB(255, 255, 255);
     cursor: pointer;
 }
+#valk-shop a{
+    color: black;
+}
 #valk-shop2{
     height: 6vh;
     width: 50vw;
@@ -39,6 +43,9 @@
     background-color: RGB(102, 105, 110);
     color: white;
 }
+#valk-shop2 a{
+    color: white;
+}
 
 #valk-shop2:hover{
     cursor: pointer;
@@ -50,24 +57,250 @@
 #valk-nav > .active > a{
     background-color: black;
 }
-
-/* #tenYears{
-    width: 100%;
-    margin-top: 5px;
-} */
+/* ------------------------------------------------- */
+/* apex */
 #apex{
     width: 100%;
     margin-top: 5px;
+    position: relative;
 }
+#apex-buttons-box{
+    width: 37vw;
+    height: 20vh;
+    position: absolute;
+    top: 145vh;
+    right: 57vw;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    flex-direction: column;
+}
+#apex-title{
+    color: white;
+    font-size: 50px;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    
+}
+#apex-subtitle{
+    color: white;
+    font-size: 20px;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-top: -10px;
+}
+#apex-shop{
+    height: 10vh;
+    width: 10vw;
+    border: 1px solid grey;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-right: 10px;
+    color: black;
+    background-color: RGB(255, 255, 255);
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#apex-nav{
+    text-decoration: none;
+}
+#apex-nav > .active > a{
+    background-color: black;
+}
+#apex-shop a{
+    color: black;
+}
+/* ------------------------------------------------- */
+/* adapt */
 #adapt{
     width: 100%;
     margin-top: 5px;
+    position: relative;
 }
+#adapt-buttons-box{
+    width: 30vw;
+    height: 20vh;
+    position: absolute;
+    top: 228vh;
+    right: 65vw;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    flex-direction: column;
+}
+#adapt-title{
+    color: white;
+    font-size: 50px;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-top: -10px;
+}
+#adapt-subtitle{
+    color: white;
+    font-size: 20px;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+}
+#adapt-shop{
+    height: 10vh;
+    width: 10vw;
+    border: 1px solid grey;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-right: 10px;
+    color: black;
+    background-color: RGB(255, 255, 255);
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid grey;
+}
+#adapt-nav{
+    text-decoration: none;
+}
+#adapt-nav > .active > a{
+    background-color: black;
+}
+#adapt-shop a{
+    color: black;
+}
+/* ------------------------------------------------- */
+/* Vital */
 #vital{
     width: 100%;
     margin-top: 5px;
+    position: relative;
 }
+#vital-buttons-box{
+    width: 30vw;
+    height: 20vh;
+    position: absolute;
+    top: 330vh;
+    right: 65vw;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    flex-direction: column;
+}
+#vital-title{
+    color: white;
+    font-size: 50px;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+}
+#vital-subtitle{
+    color: white;
+    font-size: 20px;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-top: -10px;
+}
+#vital-shop{
+    height: 10vh;
+    width: 10vw;
+    border: 1px solid grey;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-right: 10px;
+    color: black;
+    background-color: RGB(255, 255, 255);
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid grey;
+}
+#vital-nav{
+    text-decoration: none;
+}
+#vital-nav > .active > a{
+    background-color: black;
+}
+#vital-shop a{
+    color: black;
+}
+
+/* ------------------------------------------------- */
 #dual{
-    width: 100%;
+    width: 99%;
     margin-top: 5px;
+    position: relative;
+}
+#dual-buttons-box{
+    width: 99%;
+    height: 20vh;
+    position: absolute;
+    top: 455vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+#dual-title{
+    color: white;
+    font-size: 50px;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-right: 16px;
+}
+#dual-subtitle{
+    color: white;
+    font-size: 20px;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-top: -10px;
+}
+#dual-shop{
+    height: 8vh;
+    width: 15vw;
+    border: 1px solid grey;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-right: 10px;
+    color: black;
+    background-color: RGB(255, 255, 255);
+    cursor: pointer;
+    border: 1px solid grey;
+    margin-left: 15px;
+}
+#dual-nav{
+    text-decoration: none;
+}
+#dual-nav > .active > a{
+    background-color: black;
+}
+#dual-shop a{
+    color: black;
+}
+#dual-shop2{
+    height: 8vh;
+    width: 15vw;
+    border: 1px solid grey;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    margin-left: 15px;
+    color: black;
+    background-color: RGB(102, 105, 110);
+    cursor: pointer;
+    border: 1px solid grey;
+}
+#dual-nav2{
+    text-decoration: none;
+}
+#dual-nav2 > .active > a{
+    background-color: black;
+}
+#dual-shop2 a{
+    color: white;
+}
+#dual-shop2:hover{
+    cursor: pointer;
+    background-color: grey;
 }

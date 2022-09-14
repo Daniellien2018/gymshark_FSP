@@ -28,8 +28,6 @@ export const getProductReviews = productId => state => {
             }))
 };
 
-
-
 export const createReview = (review) => async dispatch => {
     
     console.log("hi from before csrfFetch")
@@ -49,6 +47,20 @@ export const createReview = (review) => async dispatch => {
     return res
 }
 
+export const updateReview = (review) => async dispatch => {
+    const res = await csrfFetch(`api/reviews/${review.id}`, {
+        method : "PATCH",
+        body: JSON.stringify(review),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    if (res.ok){
+        const review = await res.json()
+        dispatch(addReview(review))
+    }
+}
+
 export const destroyReview = (reviewId) => async dispatch => {
     const res = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: "DELETE",
@@ -63,7 +75,6 @@ export const destroyReview = (reviewId) => async dispatch => {
 const reviewsReducer = (state={}, action) => {
     Object.freeze(state)
     const newState = {...state}
-    // console.log("IN REVIEW REDUCER", action)
     switch(action.type){
         case ADD_REVIEW:{
             const review = action.payload;

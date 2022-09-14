@@ -96,12 +96,15 @@ const ReviewIndexItem = ({ review }) => {
                         <div id="delete-review" onClick={() => dispatch(destroyReview(review.id))}>Delete Review</div>
                     </button>
                     
-                    {/* <button id="edit-review-button">
-                        <div id="edit-review" onClick={() => {
+                    <button id="edit-review-button">
+                        <div id="edit-review" 
+                        onClick={() => {
                             setSelectedReview(review)
                             setShowReviewForm(true)
-                        }}>Edit Review</div>
-                    </button> */}
+                            console.log('hello')
+                        }}
+                        >Edit Review</div>
+                    </button>
                 </div>
             </div>
             <p>{getProduct()}</p>

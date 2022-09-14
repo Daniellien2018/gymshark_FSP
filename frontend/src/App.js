@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import ProductIndex from './components/ProductIndexPage/ProductIndex';
 import ProductShow from './components/ProductShowPage/ProductShow';
 import HomePage from './components/HomePage'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
             <HomePage/>
           </Route>
         </Switch>
-        
+      <Footer/>
     </>
   );
 }
