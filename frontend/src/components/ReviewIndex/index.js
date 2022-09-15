@@ -18,24 +18,43 @@ const ReviewIndex = ({product}) => {
     const [selectedReview, setSelectedReview] = useState();
 
     let form; 
-    if (sessionUser){
-        form = (
-            <button id="write-review" onClick={() => setShowReviewForm(true)}>Write a Review</button>
-        )
-    }else{
+
+    const hasReview = () => {
+        for (let review of reviews) {
+            if (review.authorId === sessionUser.id && review.productId === product.id) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    if (!sessionUser) {
         form = (
             <div>
                 <p>Must be logged in to write a review</p>
                 {/* <NavLink exact to={"/login"}>Log In Here!</NavLink> */}
             </div>
         )
+    } else if (sessionUser && !hasReview()) {
+        form = (
+            <button id="write-review" onClick={() => setShowReviewForm(true)}>Write a Review</button>
+        )
+    } else {
+        form = <div>You have already reviewed this item.</div>
     }
+
     let reviewShow;
+
     if (reviews.length > 0){
         reviewShow = (
             <div>
             {reviews.map(review => (
-                <ReviewIndexItem review={review} key={review.id}/>
+                <ReviewIndexItem review={review} 
+                key={review.id} 
+                setShowReviewForm={setShowReviewForm}
+                setSelectedReview={setSelectedReview}/>
             ))}
             </div>
         )
@@ -53,12 +72,8 @@ const ReviewIndex = ({product}) => {
                     <h2 id="review-section">Reviews</h2>
                     <div id="review-box">
                         {form}
-                        {/* <button id="write-review" onClick={() => setShowReviewForm(true)}>Write a Review</button> */}
                     </div>
                     {reviewShow}
-                    {/* {reviews.map(review => (
-                        <ReviewIndexItem review={review} key={review.id}/>
-                    ))} */}
                 </ul>
             </div>
             {showReviewForm && <ReviewForm setShowReviewForm={setShowReviewForm} product={product} selectedReview={selectedReview} />}

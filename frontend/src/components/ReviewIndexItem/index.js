@@ -7,10 +7,10 @@ import {destroyReview} from "../../store/reviews.js"
 
 
 
-const ReviewIndexItem = ({ review }) => {
+const ReviewIndexItem = ({ review, setSelectedReview, setShowReviewForm }) => {
     const dispatch = useDispatch();
-    const [showReviewForm, setShowReviewForm] = useState(false)
-    const [selectedReview, setSelectedReview] = useState();
+    // const [showReviewForm, setShowReviewForm] = useState(false)
+    // const [selectedReview, setSelectedReview] = useState();
     const sessionUser = useSelector(state => state.session.user)
     
     
@@ -99,7 +99,6 @@ const ReviewIndexItem = ({ review }) => {
                         onClick={() => {
                             setSelectedReview(review)
                             setShowReviewForm(true)
-                            console.log('hello')
                         }}
                         >Edit Review</div>
                     </button>

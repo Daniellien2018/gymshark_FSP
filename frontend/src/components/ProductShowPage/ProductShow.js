@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import productsReducer, { fetchProduct, getProduct } from "../../store/products";
 import "./ProductShow.css"
 import ReviewIndex from "../ReviewIndex"
+import { createCartItem, getCartItem, updateCartItem } from "../../store/cart";
 
 const ProductShow = () => {
     const dispatch = useDispatch();
     const {productId} = useParams();
     const product = useSelector(getProduct(productId));
+    const item = useSelector(getCartItem(productId))
+    const user = useSelector(state => state.session.user)
+    const [count, setCount] = useState(1)
+    const history = useHistory();
 
     useEffect(()=>{
         dispatch(fetchProduct(productId))
@@ -17,6 +22,33 @@ const ProductShow = () => {
 
     if (!product){
         return null
+    }
+
+    const handleAddCart = () => {
+        if (!user){
+            history.pushState("/login")
+        } 
+
+        const userId = user.id
+        if (!item) {
+            const newItem = {
+                cartItem: {
+                    quantity: count,
+                    productId: Number(productId),
+                    userId: userId
+                }
+            }
+            return dispatch(createCartItem(newItem))
+        }else if (item){
+            const updateItem = {
+                cartItem: {
+                    quantity: item.quantity + count,
+                    productId: Number(productId),
+                    userId: userId
+                }
+            }
+            return dispatch(updateCartItem(updateItem))
+        }
     }
 
     return(
@@ -58,7 +90,7 @@ const ProductShow = () => {
                         </ul>
                     </div>
                     <div id="add-to-cart-button">
-                        <button id="add-to-cart" type="submit">ADD TO BAG</button>
+                        <button id="add-to-cart" type="submit" onClick={handleAddCart}>ADD TO BAG</button>
                     </div>
                 </div>
             </div>

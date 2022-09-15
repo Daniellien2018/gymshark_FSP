@@ -32,7 +32,7 @@ export const getCartItems = state => {
     }
 }
 
-export const fetchCartItem = () => async dispatch => {
+export const fetchCartItems = () => async dispatch => {
     const res = await csrfFetch(`/api/cart_items`)
     const cartItems = await res.json();
     dispatch(receiveItems(cartItems))

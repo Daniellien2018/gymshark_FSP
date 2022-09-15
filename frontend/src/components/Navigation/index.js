@@ -27,6 +27,12 @@ function Navigation() {
       </>
     );
   }
+  const openSidebar= () => {
+    let modal = document.getElementById("cart-index")
+    let modalBackground = document.getElementById("cart-modal-background")
+    modal.style.display = "block"
+    modalBackground.style.display = "block"
+  }
 
   return (
     <div className='navBar'>
@@ -60,8 +66,10 @@ function Navigation() {
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
           {sessionLinks}
-          <button>
-            <i class="fa-solid fa-bag-shopping"></i>
+          <button 
+          // onClick={openSidebar}
+          >
+            <NavLink exact to="/cartIndex"><i class="fa-solid fa-bag-shopping"></i></NavLink>
           </button>
         </div>
       </div>

@@ -25,12 +25,18 @@ class Api::ReviewsController < ApplicationController
         render :show 
     end
 
-    # def edit
-    # end
+    def update
+        @review = Review.find(params[:id])
+        if @review.update(review_params)
+            render :show
+        else
+            render json: { errors: ["Please fill in all fields"]}, status: 422
+        end
+    end
 
     private
 
     def review_params
-        params.require(:review).permit(:body, :rating, :product_id, :author_id)
+        params.require(:review).permit(:id, :body, :rating, :product_id, :author_id)
     end
 end

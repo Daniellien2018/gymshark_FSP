@@ -36,20 +36,20 @@ export const createReview = (review) => async dispatch => {
         body: JSON.stringify(review),
         headers: {
             "Content-Type": 'application/json',
-            // "Accept" : 'application/json'
         }
     });
 
     const reviewData = await res.json()
     dispatch(addReview(reviewData))
-    // dispatch(addUser(reviewData.addUser))
-    // dispatch(receiveProduct(reviewData.product))
     return res
 }
 
-export const updateReview = (review) => async dispatch => {
-    const res = await csrfFetch(`api/reviews/${review.id}`, {
-        method : "PATCH",
+export const updateReview = (reviewId, review) => async dispatch => {
+    // console.log(review)
+    // console.log(review.review.id)
+    // console.log(review.review.authorId)
+    const res = await csrfFetch(`/api/reviews/${reviewId}`, {
+        method: "PATCH",
         body: JSON.stringify(review),
         headers: {
             'Content-Type': 'application/json'
@@ -65,11 +65,7 @@ export const destroyReview = (reviewId) => async dispatch => {
     const res = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: "DELETE",
     })
-    // const reviewData = await res.json();
-    // dispatch(removeReview(reviewData.review))
     dispatch(removeReview(reviewId))
-    // dispatch(receiveProduct(reviewData.product))
-    // return res
 }
 
 const reviewsReducer = (state={}, action) => {
@@ -85,6 +81,7 @@ const reviewsReducer = (state={}, action) => {
             return action.payload.review;
         }
         case REMOVE_REVIEWS:{
+  
             delete newState[action.payload]
             return newState
         }

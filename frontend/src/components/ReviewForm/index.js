@@ -2,14 +2,16 @@ import React, { useState } from "react"
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom"
 import "./index.css"
-import {createReview} from "../../store/reviews.js"
+import {createReview, updateReview} from "../../store/reviews.js"
 import { useSelector } from "react-redux";
 import { FaStar } from "react-icons/fa";
 
 
 const ReviewForm = ({setShowReviewForm, product, selectedReview}) => {
+    
     const {productId} = useParams();
     const sessionUser = useSelector(state => state.session.user)
+    
     let editReview = true;
 
     if (!selectedReview){
@@ -27,12 +29,16 @@ const ReviewForm = ({setShowReviewForm, product, selectedReview}) => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        // if (editReview){
-        //     dispatch(updateReview({body,rating, productId, authorId}))
-        // }
-    
-        const reviewData = {review: {body: body, rating: rating, productId: productId, authorId: sessionUser.id}}
-        dispatch(createReview(reviewData))
+        console.log(selectedReview)
+        console.log(selectedReview.id, "reviewId")
+        const reviewData = {review: {id: selectedReview.id, body: body, rating: rating, productId: productId, authorId: sessionUser.id}}
+        if (editReview){
+            // debugger
+            dispatch(updateReview(selectedReview.id, reviewData))
+        }else{
+            dispatch(createReview(reviewData))
+        }
+        
         setShowReviewForm(false)
     }
 

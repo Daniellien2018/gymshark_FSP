@@ -13,7 +13,7 @@
 class Review < ApplicationRecord
     validates :body, presence: true
     validates :rating, inclusion: {in: 1..5, message: "Rating must be between 1 and 5"}
-    validate :not_a_duplicate
+    # validate :not_a_duplicate
 
     belongs_to :product
     belongs_to :author,
@@ -21,9 +21,9 @@ class Review < ApplicationRecord
 
     private
 
-    def not_a_duplicate
-        if Review.exists?(author_id: author_id, product_id: product_id)
-            errors.add(:base, message: "You have already left a Review for this Product")
-        end
-    end
+    # def not_a_duplicate
+    #     if Review.exists?(author_id: author_id, product_id: product_id)
+    #         errors.add(:base, message: "You have already left a Review for this Product")
+    #     end
+    # end
 end

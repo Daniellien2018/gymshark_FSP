@@ -1,8 +1,11 @@
 import "./index.css"
 
 const Footer = () =>{
+
+    
     return (
         <div className="footer">
+            <hr/>
             <h1>I am footer</h1>
             <div className="topleft">
                 {/* 3 unordered lists columns */}
