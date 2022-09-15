@@ -1,1 +1,119 @@
 /* cart item */
+#cart-listing-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+#cart-listing-img {
+    width: 10vw;
+    border-radius: 2vw;
+}
+
+#listing-text {
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    margin-left: 1vw;
+    width: 15vw;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.listing-details {
+    text-align: left;
+    font-size: 1vw;
+    width: 15vw;
+    padding-left: 1.5vw;
+    padding-bottom: 0.4vh;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+#listing-name {
+    font-size: 1.2vw;
+}
+
+#listing-price {
+    margin-bottom: 1vh;
+}
+
+#cart-quantity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.2vw;
+    margin-top: 0.5vh;
+    width: 15vw;
+    overflow: hidden;
+}
+
+.cart-update {
+    display: flex;
+    flex-direction: row;
+}
+
+#cart-input {
+    width: 2vw;
+    font-size: 1.15vw;
+    text-align: center;
+    border-radius: 1vw;
+    margin-right: 0.5vw;
+    
+}
+
+#cart-button {
+    display: flex;
+    align-items: center;
+    background-color: darkgrey;
+    border-radius: 3vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 0.25vw;
+    padding-bottom: 0.25vw;
+    text-transform: uppercase;
+}
+.cart-update:hover{
+    color: lightslategrey;
+}
+#cart-button:hover{
+    background-color: lightcyan;
+}
+
+.listing-amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#cart-update {
+    border: 1px solid black;
+    font-size: 0.9vw;
+}
+
+#cart-remove {
+    font-size: 1.0vw;
+    border: none;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+#cart-remove:hover{
+    cursor: pointer;
+    background-color: pink;
+}
+
+.listing-text-first {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+#listing-subtotal {
+    padding-right: 3vw;
+}
+
+#show-add-button:hover {
+    background-color: black;
+    color: white;
+}

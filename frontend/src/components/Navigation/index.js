@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import logo from '../../assets/logos/gymshark_logo.png'
+import CartSlideOut from '../CartSlideOut';
 
 
 function Navigation() {
@@ -27,12 +28,8 @@ function Navigation() {
       </>
     );
   }
-  const openSidebar= () => {
-    let modal = document.getElementById("cart-index")
-    let modalBackground = document.getElementById("cart-modal-background")
-    modal.style.display = "block"
-    modalBackground.style.display = "block"
-  }
+
+  const [showCart, setShowCart] = useState(false)
 
   return (
     <div className='navBar'>
@@ -59,20 +56,21 @@ function Navigation() {
           <button>Accessories</button>
         </div> */}
         <div className='navCenter'>
-          <NavLink exact to="/products">Shop Now!</NavLink>
+          <NavLink id='shop-now' exact to="/products">Shop Now!</NavLink>
         </div>
         <div className='navRight'>
           <button>
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i id='magnifying-glass' class="fa-solid fa-magnifying-glass"></i>
           </button>
           {sessionLinks}
           <button 
           // onClick={openSidebar}
           >
-            <NavLink exact to="/cartIndex"><i class="fa-solid fa-bag-shopping"></i></NavLink>
+            <button id='shopping-bag' exact to="/"><i class="fa-solid fa-bag-shopping" onClick={()=>setShowCart(true)}></i></button>
           </button>
         </div>
       </div>
+      {showCart && <CartSlideOut setShowCart={setShowCart}/>}
     </div>
   );
 }

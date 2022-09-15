@@ -66,3 +66,27 @@
     margin: 10px;
     
 }
+#shop-now{
+    text-decoration: none;
+}
+#shop-now > .active > a{
+    background-color: black;
+}
+#shopping-bag{ 
+    text-decoration: none;
+}
+#shopping-bag:hover{ 
+    font-size: 3vh;
+}
+#magnifying-glass:hover{
+    font-size: 3vh;
+}
+#shoppping-bag > .active > a{
+    cursor: pointer;
+    background-color: black;
+}
+
+#profile-button:hover{
+    cursor: pointer;
+    font-size: 3vh;
+}

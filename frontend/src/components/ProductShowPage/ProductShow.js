@@ -25,6 +25,7 @@ const ProductShow = () => {
         if (!user){
             history.pushState("/login")
         } 
+        window.alert(`Successfully added ${product.name} to cart`)
 
         const userId = user.id
         if (!item) {
@@ -36,16 +37,18 @@ const ProductShow = () => {
                 }
             }
             return dispatch(createCartItem(newItem))
-        // }else if (item){
-        //     const updateItem = {
-        //         cartItem: {
-        //             quantity: item.quantity + count,
-        //             productId: productId,
-        //             userId: userId
-        //         }
-        //     }
-        //     return dispatch(updateCartItem(updateItem))
         }
+        else if (item){
+            const updateItem = {
+                cartItem: {
+                    quantity: item.quantity + count,
+                    productId: productId,
+                    userId: userId
+                }
+            }
+            return dispatch(updateCartItem(updateItem))
+        }
+        
     }
     if (!product){
         return null

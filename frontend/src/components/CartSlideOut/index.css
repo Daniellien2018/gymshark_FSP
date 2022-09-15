@@ -1,0 +1,35 @@
+#cart-modal-background{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 6;
+    background-color: rgb(123, 121, 121);
+    opacity: .5;
+    top: 0;
+} 
+
+.cart-index{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    margin: 0;
+    z-index: 150;
+    top: 0;
+    right: 0;
+    width: 32%;
+    background-color: white;
+    box-shadow: 1vw 1vw 1vw 1vw black;
+    overflow-y: scroll;
+}
+.cart-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* margin-ri; */
+}
+#cart-listings{
+    margin-left: 10px;
+}

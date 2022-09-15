@@ -7,13 +7,12 @@ import ProductIndex from './components/ProductIndexPage/ProductIndex';
 import ProductShow from './components/ProductShowPage/ProductShow';
 import HomePage from './components/HomePage'
 import Footer from './components/Footer'
-import CartIndex from './components/CartIndex';
+
 
 function App() {
   return (
     <>
       <Navigation/>
-      {/* <CartIndex/> */}
         <Switch>
           <Route exact path="/login">
             <LoginFormPage />
@@ -29,9 +28,6 @@ function App() {
           </Route>
           <Route exact path="/" >
             <HomePage/>
-          </Route>
-          <Route exact path="/cartIndex">
-            <CartIndex/>
           </Route>
         </Switch>
       <Footer/>
