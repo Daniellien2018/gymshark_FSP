@@ -20,10 +20,7 @@ const ProductShow = () => {
         dispatch(fetchProduct(productId))
     }, [productId])
 
-    if (!product){
-        return null
-    }
-
+  
     const handleAddCart = () => {
         if (!user){
             history.pushState("/login")
@@ -34,22 +31,26 @@ const ProductShow = () => {
             const newItem = {
                 cartItem: {
                     quantity: count,
-                    productId: Number(productId),
+                    productId: productId,
                     userId: userId
                 }
             }
             return dispatch(createCartItem(newItem))
-        }else if (item){
-            const updateItem = {
-                cartItem: {
-                    quantity: item.quantity + count,
-                    productId: Number(productId),
-                    userId: userId
-                }
-            }
-            return dispatch(updateCartItem(updateItem))
+        // }else if (item){
+        //     const updateItem = {
+        //         cartItem: {
+        //             quantity: item.quantity + count,
+        //             productId: productId,
+        //             userId: userId
+        //         }
+        //     }
+        //     return dispatch(updateCartItem(updateItem))
         }
     }
+    if (!product){
+        return null
+    }
+
 
     return(
         <>

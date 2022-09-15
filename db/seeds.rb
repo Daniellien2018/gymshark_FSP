@@ -14,6 +14,7 @@ ApplicationRecord.transaction do
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
     Product.destroy_all
+    CartItem.destroy_all
     
   
     puts "Resetting primary keys..."

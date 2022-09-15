@@ -11,7 +11,6 @@ import { Redirect, useHistory } from "react-router-dom";
 
 const CartIndex = () => {
     const cartItems = useSelector(getCartItems);
-    console.log(cartItems)
     const user = useSelector(state => state.session.user)
     const dispatch = useDispatch();
     const history = useHistory();
