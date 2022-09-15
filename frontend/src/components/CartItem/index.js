@@ -10,14 +10,26 @@ import { updateCartItem } from "../../store/cart";
 
 
 const CartListing = ({cartItem}) => {
-    // const [count, setCount] = useState(cartItem.count)
-    
-    // useEffect( () => {
-    //     setCount(cartItem.count)
-    // }, [cartItem.count])
+    // console.log(cartItem)
+    // const {quantity, productId, id, userId} = cartItem;
+    // const dispatch = useDispatch();
+    // const product = useSelector(getProduct(cartItem.productId));
+    const user = useSelector(state => state.session.user)
+    // const [count, setCount] = useState(quantity);
+    const [deleted, setDeleted] = useState(false);
+    const history = useHistory();
+    // console.log(user)
 
     return (
-        <h1>hi i am item</h1>
+        <>
+        <h1>hi i am item biggest title</h1>
+        {/* <h2>part 2 to title</h2> */}
+        {/* <p>{user.id}</p> */}
+        {/* <p>{user.name}</p> */}
+        
+        </>
+        
+        
     )
 
     // const {quantity, productId, id} = cartItem;

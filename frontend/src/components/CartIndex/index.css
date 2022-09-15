@@ -3,3 +3,13 @@
     display: flex;
     justify-content: end;
 } */
+#close-cart{
+    display: flex;
+    justify-content: end;
+    margin-right: 95px;
+}
+#cart-header{
+    display: flex;
+    justify-content: end;
+    margin-right: 30px;
+}
