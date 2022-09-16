@@ -20,13 +20,15 @@ const ProductShow = () => {
         dispatch(fetchProduct(productId))
     }, [productId])
 
+    if (!product){
+        return null
+    }
   
     const handleAddCart = () => {
         if (!user){
             history.pushState("/login")
         } 
-        window.alert(`Successfully added ${product.name} to cart`)
-
+        
         const userId = user.id
         if (!item) {
             const newItem = {
@@ -50,8 +52,12 @@ const ProductShow = () => {
         }
         
     }
-    if (!product){
-        return null
+    
+    const displayAdded = (e) => {
+        e.preventDefault()
+        let ele = document.getElementById('added-to-cart');
+        ele.style.display = 'block'
+        handleAddCart()
     }
 
 
@@ -94,8 +100,11 @@ const ProductShow = () => {
                         </ul>
                     </div>
                     <div id="add-to-cart-button">
-                        <button id="add-to-cart" type="submit" onClick={handleAddCart}>ADD TO BAG</button>
+                        <button id="add-to-cart" type="submit" onClick={displayAdded}>ADD TO BAG</button>
                     </div>
+                    <div id="added-to-cart-box">
+                        <p id="added-to-cart">Added to Cart!</p>
+                        </div>
                 </div>
             </div>
             <div className="review-div"><ReviewIndex product={product}/>

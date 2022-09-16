@@ -73,3 +73,11 @@ h3{
 #add-to-cart:hover{
     cursor: pointer;
 }
+
+#added-to-cart-box{
+    display: flex;
+    justify-content: center;
+}
+#added-to-cart{
+    color: black;
+}
