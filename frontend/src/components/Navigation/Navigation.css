@@ -74,6 +74,8 @@
 }
 #shopping-bag{ 
     text-decoration: none;
+    border: none;
+    background-color: white;
 }
 #shopping-bag:hover{ 
     font-size: 3vh;
