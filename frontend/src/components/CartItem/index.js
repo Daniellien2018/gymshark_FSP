@@ -11,18 +11,18 @@ import { updateCartItem } from "../../store/cart";
 
 const CartListing = ({cartItem, setSubamount}) => {
     const {quantity, productId, id, userId} = cartItem;
+    console.log(id)
     const dispatch = useDispatch();
     const product = useSelector(getProduct(cartItem.productId));
     const user = useSelector(state => state.session.user)
     const [count, setCount] = useState(quantity);
-    const [deleted, setDeleted] = useState(false);
+    // const [deleted, setDeleted] = useState(false);
     const history = useHistory();
     // console.log(user)
 
     useEffect( () => {
         dispatch(fetchProduct(productId))
-        dispatch(fetchCartItems())
-    }, [deleted])
+    }, [])
 
     if (!user) return history.push("/signup");
     if (!product) return null;
@@ -33,7 +33,7 @@ const CartListing = ({cartItem, setSubamount}) => {
         // console.log("hello from delete")
         e.preventDefault();
         dispatch(deleteCartItem(id))//product
-        setDeleted(true)
+        // setDeleted(true)
     }
 
     const handleInput = () => {

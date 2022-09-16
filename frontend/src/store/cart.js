@@ -12,9 +12,9 @@ export const receiveItems = cartItems => ({
     type: RECEIVE_ITEMS,
     cartItems
 })
-export const removeItem = cartItemId => ({
+export const removeItem = cartItem => ({
     type: REMOVE_ITEM,
-    cartItemId
+    cartItem
 })
 //selectors
 export const getCartItem = productId => state => {
@@ -66,12 +66,13 @@ export const updateCartItem = (cartData) => async dispatch => {
     dispatch(receiveItem(cartItem));
 }
 
-export const deleteCartItem = (cartItem) => async dispatch => {
-    const res = await csrfFetch(`/api/cart_items/${cartItem.id}`, {
+export const deleteCartItem = (cartItemId) => async dispatch => {
+    const res = await csrfFetch(`/api/cart_items/${cartItemId}`, {
         method: "DELETE",
     })
-    console.log("hello from deletecartitem")
-    dispatch(removeItem(cartItem.productId))
+    const data = await res.json()
+    dispatch(removeItem(data))
+    return res
 }
 
 //reducer
@@ -87,8 +88,8 @@ const cartReducer = (state={}, action) => {
             newState[action.cartItem.id] = action.cartItem
             return newState
         case REMOVE_ITEM:
-            delete newState[action.cartItemId]
-            return newState
+            delete newState[action.cartItem.id]
+            return newState;
         default:
             return state
     }

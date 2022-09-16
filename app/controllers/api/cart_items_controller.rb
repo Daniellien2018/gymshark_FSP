@@ -27,7 +27,7 @@ class Api::CartItemsController < ApplicationController
     def destroy
          @cart_item = CartItem.find(params[:id])
         if @cart_item.destroy
-            render json: {message: 'Successfully removed from cart.'}
+            render :show
         end 
     end 
 

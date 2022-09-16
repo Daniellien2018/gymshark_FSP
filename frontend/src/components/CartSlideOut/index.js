@@ -18,13 +18,13 @@ const CartSlideOut = ({setShowCart}) => {
 
     useEffect( () => {
         dispatch(fetchCartItems())
-        dispatch(fetchProducts())
+        // dispatch(fetchProducts())
     }, [cartItems.length])
 
-    useEffect( () => {
-        dispatch(fetchCartItems())
-        dispatch(fetchProducts())
-    }, [user])
+    // useEffect( () => {
+    //     dispatch(fetchCartItems())
+    //     dispatch(fetchProducts())
+    // }, [user])
     
     const mapCartItems = () => {
         if (cartItems.length === 0){
@@ -42,7 +42,7 @@ const CartSlideOut = ({setShowCart}) => {
 
     const deleteCart = () => {
         return cartItems.map(cartItem => (
-            dispatch(deleteCartItem(cartItem))
+            dispatch(deleteCartItem(cartItem.id))
         ))
     }
 
@@ -52,39 +52,48 @@ const CartSlideOut = ({setShowCart}) => {
         history.push("/login")
     }
 
-    const handleCheckout = (e) => {
-        e.preventDefault();
-        deleteCart();
+
+
+    const openCheckout = (e) => {
+        let ele = document.getElementById('checkout-popup');
+        ele.style.display = 'block'
+    }
+
+    const closeCheckout = (e) => {
+        e.preventDefault()
+        document.getElementById("checkout-popup").style.display ="none"
+        deleteCart()
         setShowCart(false)
-        if (cartItems.length > 0){
-            window.alert(
-                "Successfully Purchased! \nThank you for shopping GymWhale :)"
-                // "Purchased the following: \n" + 
-                // `${cartItems.map(cartItem => `${cartItem.count} of ${cartItem.name}`).join('\n')}`
-            )
-        }else{
-            window.alert("Add Items to Cart in order to buy!")
-        }
-        
     }
 
     return (
         <>
-            <div id="cart-modal-background" onClick={()=>setShowCart(false)}></div>
+            <div id="cart-modal-background" onClick={closeCheckout}></div>
             <div className="cart-index">
                 <div className="cart-items">
                     <div className="cart-header">
                         <h1 id="cart-title">Cart Items</h1>
-                        <form id="checkout-button-top"onSubmit={handleCheckout}>
-                            <button id="checkout-button" type="submit">Purchase Items</button>
-                        </form>
+                            <button id="checkout-button" onClick={openCheckout}>Purchase Items</button>
                         <hr/>
                     </div>
+
                     {user ? 
                     <div id="cart-listings" >{mapCartItems()}</div> :
                     <>
                         <button id="cart-login" onClick={handleLogin}>Login to add items to cart</button>
                     </>}
+                </div>
+                <div id="checkout-popup">
+                        <div id="checkout-text-box">
+                            <p className="checkout-text">Thank you for shopping GymWhale
+                                <div id="close-checkout-popup" onClick={closeCheckout}>
+                                    <i class="fa-light fa-x"></i>
+                                </div>
+                            </p>
+                            <p className="checkout-text">
+                                All products are real and can be purchased at www.gymshark.com</p>
+                            <p className="checkout-text">Connect with me down below!</p>
+                        </div>
                 </div>
             </div>
             
