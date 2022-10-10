@@ -33,16 +33,6 @@ function Navigation() {
 
   return (
     <div className='navBar'>
-      <div className='navTop'>
-          <button>
-            <i class="fa-regular fa-user"></i>
-            {" "}My Account
-          </button>
-          <button>Blog</button>
-          <button>Newsletter</button>
-          <button>Help</button>
-          <button>Location</button>
-      </div>
 
       <div className='navBottom'>
         <div className='navLeft'>
