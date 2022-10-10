@@ -15,10 +15,10 @@ const HomePage = () =>{
                 <img id="valkrae" src={valkrae} alt="shop-valkrae" />
                 <div id="valk-buttons-box">
                     <button id="valk-shop">
-                        <NavLink id="valk-nav" exact to="/products">Shop Womens</NavLink>
+                        <NavLink id="valk-nav" exact to="/products/womens">Shop Womens</NavLink>
                     </button>
                     <button id="valk-shop2">
-                        <NavLink id="valk-nav" exact to="/products">Shop Mens</NavLink>
+                        <NavLink id="valk-nav" exact to="/products/mens">Shop Mens</NavLink>
                     </button>
                 </div>
 
@@ -55,10 +55,10 @@ const HomePage = () =>{
                     <h2 id="dual-subtitle">The change in season means your workout clothes are gonna need a switch-up too.</h2>
                     <div id="dual-bottom-box">
                         <button id="dual-shop">
-                            <NavLink id="dual-nav" exact to="/products">SHOP WOMENS</NavLink>
+                            <NavLink id="dual-nav" exact to="/products/womens">SHOP WOMENS</NavLink>
                         </button>
                         <button id="dual-shop2">
-                            <NavLink id="dual-nav2" exact to="/products">SHOP MENS</NavLink>
+                            <NavLink id="dual-nav2" exact to="/products/mens">SHOP MENS</NavLink>
                         </button>
                     </div>
                 </div>

@@ -7,6 +7,9 @@ import ProductIndex from './components/ProductIndexPage/ProductIndex';
 import ProductShow from './components/ProductShowPage/ProductShow';
 import HomePage from './components/HomePage'
 import Footer from './components/Footer'
+import MensIndex from './components/Products/MensProducts/MensIndex'
+import WomensIndex from './components/Products/WomensProducts/WomensIndex';
+import AccessoryIndex from './components/Products/AccessoryProducts/AccessoryIndex';
 
 
 function App() {
@@ -22,6 +25,15 @@ function App() {
           </Route>
           <Route exact path="/products">
             <ProductIndex/>
+          </Route>
+          <Route exact path="/products/mens">
+            <MensIndex/>
+          </Route>
+          <Route exact path="/products/womens">
+            <WomensIndex/>
+          </Route>
+          <Route exact path="/products/accessories">
+            <AccessoryIndex/>
           </Route>
           <Route exact path="/products/:productId">
             <ProductShow/>
