@@ -32,21 +32,18 @@ function Navigation() {
   const [showCart, setShowCart] = useState(false)
 
   return (
-    <div className='navBar'>
-
-      <div className='navBottom'>
+    <div className='navBarContainer'>
+      <div className='navBar'>
         <div className='navLeft'>
           <NavLink exact to="/">
             <img id="logo" src={logo} alt='logo'></img>
           </NavLink>
         </div>
-        {/* <div className='navCenter'>
-          <button>Women's</button>
-          <button>Men's</button>
-          <button>Accessories</button>
-        </div> */}
         <div className='navCenter'>
           <NavLink id='shop-now' exact to="/products">Shop Now!</NavLink>
+          <NavLink id='shop-now' exact to="/products/mens">Shop Mens</NavLink>
+          <NavLink id='shop-now' exact to="/products/womens">Shop Womens</NavLink>
+          <NavLink id='shop-now' exact to="/products/accessories">Shop Accessories</NavLink>
         </div>
         <div className='navRight'>
           <button>
