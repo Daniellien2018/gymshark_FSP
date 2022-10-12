@@ -15,6 +15,7 @@ const ProductShow = () => {
     const user = useSelector(state => state.session.user)
     const [count, setCount] = useState(1)
     const history = useHistory();
+    const [showCart, setShowCart] = useState(false)
 
     useEffect(()=>{
         dispatch(fetchProduct(productId))
@@ -57,6 +58,7 @@ const ProductShow = () => {
         e.preventDefault()
         let ele = document.getElementById('added-to-cart');
         ele.style.display = 'block'
+        setShowCart(true)
         handleAddCart()
     }
 
@@ -104,7 +106,7 @@ const ProductShow = () => {
                     </div>
                     <div id="added-to-cart-box">
                         <p id="added-to-cart">Added to Cart!</p>
-                        </div>
+                    </div>
                 </div>
             </div>
             <div className="review-div"><ReviewIndex product={product}/>

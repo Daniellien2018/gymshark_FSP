@@ -1,6 +1,6 @@
 import "./index.css"
-import cartListing from "../CartItem"
-import CartListing from "../CartItem";
+
+import CartItem from "../CartItem";
 import { fetchCartItems } from "../../store/cart";
 import { getCartItems } from "../../store/cart";
 import { deleteCartItem } from "../../store/cart";
@@ -31,7 +31,7 @@ const CartSlideOut = ({setShowCart}) => {
             return "Your Cart is Empty!"
         }else{
             return cartItems.map(cartItem => (
-                <CartListing key={cartItem.id} cartItem={cartItem} setSubamount={setSubamount}/>
+                <CartItem key={cartItem.id} cartItem={cartItem} setSubamount={setSubamount}/>
             ))
         }
     }
@@ -57,12 +57,13 @@ const CartSlideOut = ({setShowCart}) => {
     const openCheckout = (e) => {
         let ele = document.getElementById('checkout-popup');
         ele.style.display = 'block'
+        deleteCart()
     }
 
     const closeCheckout = (e) => {
         e.preventDefault()
         document.getElementById("checkout-popup").style.display ="none"
-        deleteCart()
+        // deleteCart()
         setShowCart(false)
     }
 
