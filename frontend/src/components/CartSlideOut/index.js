@@ -28,7 +28,7 @@ const CartSlideOut = ({setShowCart}) => {
     
     const mapCartItems = () => {
         if (cartItems.length === 0){
-            return "Your Cart is Empty!"
+            return ""
         }else{
             return cartItems.map(cartItem => (
                 <CartItem key={cartItem.id} cartItem={cartItem} setSubamount={setSubamount}/>
@@ -73,9 +73,15 @@ const CartSlideOut = ({setShowCart}) => {
             <div className="cart-index">
                 <div className="cart-items">
                     <div className="cart-header">
-                        <h1 id="cart-title">Cart Items</h1>
-                            <button id="checkout-button" onClick={openCheckout}>Purchase Items</button>
-                        <hr/>
+                        {cartItems.length > 0 ?
+                            <div>
+                                <h1 id="cart-title">Cart Items</h1>
+                                    <button id="checkout-button" onClick={openCheckout}>Purchase Items</button>
+                                <hr/> 
+                            </div>
+                            :
+                            <p id="cart-title">Your Cart is Empty!</p>
+                        }
                     </div>
 
                     {user ? 
