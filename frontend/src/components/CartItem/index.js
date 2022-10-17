@@ -11,7 +11,7 @@ import { updateCartItem } from "../../store/cart";
 
 const CartItem = ({cartItem, setSubamount}) => {
     const {quantity, productId, id, userId} = cartItem;
-    console.log(id)
+    // console.log(id)
     const dispatch = useDispatch();
     const product = useSelector(getProduct(cartItem.productId));
     const user = useSelector(state => state.session.user)
