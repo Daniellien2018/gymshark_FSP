@@ -6,6 +6,7 @@ import productsReducer, { fetchProduct, getProduct } from "../../store/products"
 import "./ProductShow.css"
 import ReviewIndex from "../ReviewIndex"
 import { createCartItem, getCartItem, updateCartItem } from "../../store/cart";
+import CartSlideOut from "../CartSlideOut";
 
 const ProductShow = () => {
     const dispatch = useDispatch();
@@ -15,7 +16,8 @@ const ProductShow = () => {
     const user = useSelector(state => state.session.user)
     const [count, setCount] = useState(1)
     const history = useHistory();
-    const [showCart, setShowCart] = useState(false)
+    
+    const [showCart, setShowCart] = useState(false);
 
     useEffect(()=>{
         dispatch(fetchProduct(productId))
@@ -55,16 +57,18 @@ const ProductShow = () => {
     }
     
     const displayAdded = (e) => {
-        e.preventDefault()
-        let ele = document.getElementById('added-to-cart');
-        ele.style.display = 'block'
-        setShowCart(true)
+        e.preventDefault();
+        // setShowCart(true)
+        console.log("why no show up")
+        // document.getElementById("add-to-cart").addEventListener("click", setShowCart(true));
+        // let ele = document.getElementById('added-to-cart');
+        // ele.style.display = 'block'
         handleAddCart()
     }
 
 
     return(
-        <>
+        
         <div className="main-div">
             <h3 id="route">Home/All Products/{product.category}/{product.name}</h3>
             <div className="product-div">
@@ -101,18 +105,18 @@ const ProductShow = () => {
                             <i id="product-info-logo" class="fa-solid fa-truck-fast"></i> Free Express over $150
                         </ul>
                     </div>
-                    <div id="add-to-cart-button">
+                    <div id="add-to-cart-button" onClick={()=>setShowCart(true)}>
                         <button id="add-to-cart" type="submit" onClick={displayAdded}>ADD TO BAG</button>
                     </div>
-                    <div id="added-to-cart-box">
+                    {/* <div id="added-to-cart-box">
                         <p id="added-to-cart">Added to Cart!</p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <div className="review-div"><ReviewIndex product={product}/>
-            </div>
+            <div className="review-div"><ReviewIndex product={product}/></div>
+            {showCart && <CartSlideOut setShowCart={setShowCart}/>}
         </div>
-        </>
+        
     )
 }
 
