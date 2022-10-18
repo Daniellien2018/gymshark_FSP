@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 import MensIndex from './components/Products/MensProducts/MensIndex'
 import WomensIndex from './components/Products/WomensProducts/WomensIndex';
 import AccessoryIndex from './components/Products/AccessoryProducts/AccessoryIndex';
-import SearchBar from './components/SearchBar/SearchBar';
+import SearchIndex from './components/SearchIndex/SearchIndex';
 
 
 function App() {
@@ -18,8 +18,8 @@ function App() {
     <>
       <Navigation/>
         <Switch>
-        <Route exact path="/search">
-            <SearchBar />
+          <Route exact path="/search">
+            <SearchIndex />
           </Route>
           <Route exact path="/login">
             <LoginFormPage />
