@@ -21,6 +21,9 @@ export const getCartItem = productId => state => {
     if (!state.cartItems){
         return null
     }else{
+        // console.log("hi from getCartItem")
+        // console.log(state.cartItems)
+        // console.log(Object.values(state.cartItems)[productId])
         return state.cartItems[productId]
     }
 }
@@ -39,7 +42,7 @@ export const fetchCartItems = () => async dispatch => {
 }
 
 export const createCartItem = (cartData) => async dispatch => {
-    console.log(cartData)
+    // console.log(cartData)
     const res = await csrfFetch(`/api/cart_items`, {
         method: "POST",
         body: JSON.stringify(cartData),

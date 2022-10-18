@@ -9,9 +9,9 @@ import { updateCartItem } from "../../store/cart";
 
 
 
-const CartListing = ({cartItem, setSubamount}) => {
+const CartItem = ({cartItem, setSubamount}) => {
     const {quantity, productId, id, userId} = cartItem;
-    console.log(id)
+    // console.log(id)
     const dispatch = useDispatch();
     const product = useSelector(getProduct(cartItem.productId));
     const user = useSelector(state => state.session.user)
@@ -87,4 +87,4 @@ const CartListing = ({cartItem, setSubamount}) => {
     )
 }
 
-export default CartListing
+export default CartItem;

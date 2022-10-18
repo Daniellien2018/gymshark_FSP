@@ -1,6 +1,6 @@
 import "./index.css"
-import cartListing from "../CartItem"
-import CartListing from "../CartItem";
+
+import CartItem from "../CartItem";
 import { fetchCartItems } from "../../store/cart";
 import { getCartItems } from "../../store/cart";
 import { deleteCartItem } from "../../store/cart";
@@ -28,10 +28,10 @@ const CartSlideOut = ({setShowCart}) => {
     
     const mapCartItems = () => {
         if (cartItems.length === 0){
-            return "Your Cart is Empty!"
+            return ""
         }else{
             return cartItems.map(cartItem => (
-                <CartListing key={cartItem.id} cartItem={cartItem} setSubamount={setSubamount}/>
+                <CartItem key={cartItem.id} cartItem={cartItem} setSubamount={setSubamount}/>
             ))
         }
     }
@@ -57,12 +57,13 @@ const CartSlideOut = ({setShowCart}) => {
     const openCheckout = (e) => {
         let ele = document.getElementById('checkout-popup');
         ele.style.display = 'block'
+        deleteCart()
     }
 
     const closeCheckout = (e) => {
         e.preventDefault()
         document.getElementById("checkout-popup").style.display ="none"
-        deleteCart()
+        // deleteCart()
         setShowCart(false)
     }
 
@@ -72,9 +73,15 @@ const CartSlideOut = ({setShowCart}) => {
             <div className="cart-index">
                 <div className="cart-items">
                     <div className="cart-header">
-                        <h1 id="cart-title">Cart Items</h1>
-                            <button id="checkout-button" onClick={openCheckout}>Purchase Items</button>
-                        <hr/>
+                        {cartItems.length > 0 ?
+                            <div>
+                                <h1 id="cart-title">Cart Items</h1>
+                                    <button id="checkout-button" onClick={openCheckout}>Purchase Items</button>
+                                <hr/> 
+                            </div>
+                            :
+                            <p id="cart-title">Your Cart is Empty!</p>
+                        }
                     </div>
 
                     {user ? 
