@@ -10,14 +10,10 @@ import CartSlideOut from "../CartSlideOut";
 
 const ProductShow = () => {
     const dispatch = useDispatch();
-    const {productId} = useParams();
-    // console.log(productId)
-    const product = useSelector(getProduct(productId));
-    // console.log(product)
-    const item = useSelector(getCartItem(productId))
-    // console.log(item)
-    const itemsInCart = useSelector(getCartItems)
     const user = useSelector(state => state.session.user)
+    const {productId} = useParams();
+    const product = useSelector(getProduct(productId));
+    const cartItems = useSelector(getCartItems)
     const [count, setCount] = useState(1)
     const history = useHistory();
     
@@ -37,27 +33,43 @@ const ProductShow = () => {
         } 
         
         const userId = user.id
-        console.log(product)
-        console.log(itemsInCart)
-        console.log(product.id)
-        // console.log(itemsInCart[0].produ ctId)
-        let i = 0;
-        if (itemsInCart.length === 0){
-            const newItem = {
-                cartItem: {
-                    quantity: count,
-                    productId: productId,
-                    userId: userId
-                }
+
+        const item = {
+            cartItem: {
+                quantity: count,
+                productId: productId,
+                userId: userId
+            },
+        };
+        for (let cartItem of cartItems){
+            if (cartItem.productId === productId){
+                return dispatch(updateCartItem(item))
             }
-            return dispatch(createCartItem(newItem))
-        }else{
-            const updatedItem = {
-                // quantity
-            }
-            // let ele = document.getElementById('added-to-cart');
-            // ele.style.display = 'block'
         }
+        return dispatch(createCartItem(item))
+
+
+        // console.log(product)
+        // console.log(itemsInCart)
+        // console.log(product.id)
+        // // console.log(itemsInCart[0].productId)
+        // let i = 0;
+        // if (itemsInCart.length === 0){
+        //     const newItem = {
+        //         cartItem: {
+        //             quantity: count,
+        //             productId: productId,
+        //             userId: userId
+        //         }
+        //     }
+        //     return dispatch(createCartItem(newItem))
+        // }else{
+        //     const findItem = itemsInCart.filter( item => {
+        //         return item.productId === productId
+        //     })
+        //     console.log(findItem)
+
+        // }
         // while (i < itemsInCart.length) {
         //     if (product.id === itemsInCart[i].productId){
         //         console.log("item is alreayd in cart")
