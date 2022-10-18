@@ -27,6 +27,9 @@
     width: 110%;
     height: 110%;
 }
+.navCenter {
+    margin-right: 4vw;
+}
 
 .navRight{
     padding-right: 30px;
@@ -45,7 +48,9 @@
 }
 #shop-now{
     text-decoration: none;
+    margin-left: 5vw;
 }
+
 #shop-now > .active > a{
     background-color: black;
 }

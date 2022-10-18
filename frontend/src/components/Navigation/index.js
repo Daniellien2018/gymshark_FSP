@@ -41,10 +41,10 @@ function Navigation() {
           </NavLink>
         </div>
         <div className='navCenter'>
-          <NavLink id='shop-now' exact to="/products">Shop Now!</NavLink>
-          <NavLink id='shop-now' exact to="/products/mens">Shop Mens</NavLink>
-          <NavLink id='shop-now' exact to="/products/womens">Shop Womens</NavLink>
-          <NavLink id='shop-now' exact to="/products/accessories">Shop Accessories</NavLink>
+          <NavLink id='shop-now' exact to="/products">Shop All!</NavLink>
+          <NavLink id='shop-now' exact to="/products/mens">Mens</NavLink>
+          <NavLink id='shop-now' exact to="/products/womens">Womens</NavLink>
+          <NavLink id='shop-now' exact to="/products/accessories">Accessories</NavLink>
         </div>
         <div className='navRight'>
           <button>
