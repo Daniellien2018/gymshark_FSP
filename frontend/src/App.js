@@ -11,11 +11,13 @@ import MensIndex from './components/Products/MensProducts/MensIndex'
 import WomensIndex from './components/Products/WomensProducts/WomensIndex';
 import AccessoryIndex from './components/Products/AccessoryProducts/AccessoryIndex';
 import SearchIndex from './components/SearchIndex/SearchIndex';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 
 function App() {
   return (
     <>
+      <ScrollToTop/>
       <Navigation/>
         <Switch>
           <Route exact path="/search">
