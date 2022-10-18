@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
@@ -9,6 +9,7 @@ import CartSlideOut from '../CartSlideOut';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
+  const history = useHistory();
 
   let sessionLinks;
   if (sessionUser) {
@@ -47,7 +48,7 @@ function Navigation() {
         </div>
         <div className='navRight'>
           <button>
-            <i id='magnifying-glass' class="fa-solid fa-magnifying-glass"></i>
+            <i id='magnifying-glass' class="fa-solid fa-magnifying-glass" onClick={()=>history.push("/search")}></i>
           </button>
           {sessionLinks}
           <button 
