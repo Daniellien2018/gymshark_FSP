@@ -82,3 +82,38 @@ h3{
     color: black;
     display: none;
 }
+
+#show-quantity-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.show-quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    border: 1px solid black;
+    border-radius: 5vh;
+    margin-top: 0.5vh;
+    width: 28vw;
+    overflow: hidden;
+}
+.show-quantity > button {
+    /* background-color: aqua; */
+    text-align: center;
+    padding-left: 1.3vw;
+    padding-right: 1.3vw;
+    padding-top: 0.75vh;
+    padding-bottom: 0.75vh;
+}
+.show-quantity input {
+    width: 3vw;
+    border: none;
+    font-size: 1vw;
+    text-align: center;
+}
+.show-quantity input:focus {
+    outline: none;
+}

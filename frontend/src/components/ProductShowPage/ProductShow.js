@@ -112,12 +112,13 @@ const ProductShow = () => {
                             <i id="product-info-logo" class="fa-solid fa-truck-fast"></i> Free Express over $150
                         </ul>
                     </div>
-                    <div className="show-quantity">
-                              
+                    <div id="show-quantity-container">
+                        <label htmlFor="show-quantity-container" id="show-label">Select Quantity</label>
+                        <div className="show-quantity">
                             <button onClick={() => ((parseInt(count) - 1) > 0 ? setCount(parseInt(count) - 1) : setCount(1))}>-</button>
-                                <input type="text" id="show-input" value={count} onChange={handleInput}></input>
+                            <input type="text" id="show-input" value={count} onChange={handleInput}></input>
                             <button onClick={() => setCount(parseInt(count) + 1)}>+</button>
-                              
+                        </div>
                     </div>
                     <div id="add-to-cart-button" onClick={()=>setShowCart(true)}>
                         <button id="add-to-cart" type="submit" onClick={handleAddCart}>ADD TO BAG</button>
