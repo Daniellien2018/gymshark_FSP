@@ -48,8 +48,8 @@ const ProductShow = () => {
 
     const handleAddCart = (e) => {
         e.preventDefault();
-        const userId = user.id;
         setShowCart(true)
+        const userId = user.id;
 
         if (!item) {
             const newItem = {
