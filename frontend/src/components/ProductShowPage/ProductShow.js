@@ -49,6 +49,7 @@ const ProductShow = () => {
     const handleAddCart = (e) => {
         e.preventDefault();
         const userId = user.id;
+        setShowCart(true)
 
         if (!item) {
             const newItem = {
@@ -70,6 +71,7 @@ const ProductShow = () => {
             }
             return dispatch(updateCartItem(updateItem))
         }
+        
     }
 
 
@@ -120,7 +122,7 @@ const ProductShow = () => {
                             <button onClick={() => setCount(parseInt(count) + 1)}>+</button>
                         </div>
                     </div>
-                    <div id="add-to-cart-button" onClick={()=>setShowCart(true)}>
+                    <div id="add-to-cart-button" >
                         <button id="add-to-cart" type="submit" onClick={handleAddCart}>ADD TO BAG</button>
                     </div>
                     
