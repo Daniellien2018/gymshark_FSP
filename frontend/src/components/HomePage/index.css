@@ -1,17 +1,22 @@
 /* Valk */
+.background-img{
+    overflow-x: hidden;
+}
 #valkrae{
     width: 100%;
     position: relative;
 }
 #valk-buttons-box{
-    width: 30vw;
-    height: 10vh;
+    z-index: 10;
+    width: 30%;
+    height: 30%;
     position: absolute;
-    top: 90vh;
-    right: 35vw;
+    top: 60vh;
+    left: 35vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* background-color: red; */
 }
 #valk-shop{
     height: 6vh;
@@ -65,11 +70,12 @@
     position: relative;
 }
 #apex-buttons-box{
-    width: 37vw;
-    height: 20vh;
+    z-index: 10;
+    width: 30%;
+    height: 30%;
     position: absolute;
-    top: 145vh;
-    right: 57vw;
+    top: 120vh;
+    right: 60vw;
     display: flex;
     align-items: left;
     justify-content: space-between;
@@ -122,10 +128,13 @@
     position: relative;
 }
 #adapt-buttons-box{
-    width: 30vw;
-    height: 20vh;
+    z-index: 10;
+    width: 30%;
+    height: 15%;
+    /* width: 30vw; */
+    /* height: 20vh; */
     position: absolute;
-    top: 228vh;
+    top: 210vh;
     right: 65vw;
     display: flex;
     align-items: left;
@@ -177,10 +186,13 @@
     position: relative;
 }
 #vital-buttons-box{
-    width: 30vw;
-    height: 20vh;
+    z-index: 10;
+    width: 30%;
+    height: 15%;
+    /* width: 30vw; */
+    /* height: 20vh; */
     position: absolute;
-    top: 330vh;
+    top: 300vh;
     right: 65vw;
     display: flex;
     align-items: left;

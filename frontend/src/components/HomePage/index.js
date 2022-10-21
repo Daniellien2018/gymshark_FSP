@@ -49,19 +49,6 @@ const HomePage = () =>{
                     </button>
                 </div>
 
-                {/* <img id="dual" src={dual} alt="shop-dual" />
-                <div id="dual-buttons-box">
-                    <h1 id="dual-title">FALL ESSENTIALS</h1>
-                    <h2 id="dual-subtitle">The change in season means your workout clothes are gonna need a switch-up too.</h2>
-                    <div id="dual-bottom-box">
-                        <button id="dual-shop">
-                            <NavLink id="dual-nav" exact to="/products/womens">SHOP WOMENS</NavLink>
-                        </button>
-                        <button id="dual-shop2">
-                            <NavLink id="dual-nav2" exact to="/products/mens">SHOP MENS</NavLink>
-                        </button>
-                    </div>
-                </div> */}
             </div>
         </>
     )
