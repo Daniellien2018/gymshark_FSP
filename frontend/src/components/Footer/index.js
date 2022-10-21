@@ -5,7 +5,6 @@ import gymshark from "../../assets/logos/gymshark_logo.png"
 
 const Footer = () =>{
 
-    
     return (
         <div className="footer">
             <hr/>
