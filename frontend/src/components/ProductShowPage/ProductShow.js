@@ -5,120 +5,85 @@ import { useDispatch, useSelector } from "react-redux";
 import productsReducer, { fetchProduct, getProduct } from "../../store/products";
 import "./ProductShow.css"
 import ReviewIndex from "../ReviewIndex"
-import { createCartItem, getCartItem, getCartItems, updateCartItem } from "../../store/cart";
+import { createCartItem, fetchCartItems, getCartItem, getCartItems, updateCartItem } from "../../store/cart";
 import CartSlideOut from "../CartSlideOut";
 
 const ProductShow = () => {
+    const {productId} = useParams();
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user)
-    const {productId} = useParams();
     const product = useSelector(getProduct(productId));
-    const cartItems = useSelector(getCartItems)
+    const item = useSelector(getCartItem(productId))
     const [count, setCount] = useState(1)
     const history = useHistory();
+    
+    //The problem is that "item" is being returned by 'getCartItem(productId)' as undefined --> CartReducer bug
+    console.log(productId, "i am product Id")
+    console.log(item, "i am item")
+    console.log(product, "i am the product")
     
     const [showCart, setShowCart] = useState(false);
     
     useEffect(()=>{
+        // dispatch(fetchProduct(productId))
         dispatch(fetchProduct(productId))
+        dispatch(fetchCartItems())
+        // dispatch(fetchCartItems())
+        // dispatch(fetchReviews(productId))
     }, [productId])
+
+    useEffect(() => {
+        dispatch(getCartItem(productId))
+    },[item])
     
     if (!product){
         return null
     }
-    
-    const handleAddCart = () => {
-        if (!user){
-            history.pushState("/login")
-        } 
-        
-        const userId = user.id
 
-        const item = {
-            cartItem: {
-                quantity: count,
-                productId: productId,
-                userId: userId
-            },
-        };
-        for (let cartItem of cartItems){
-            if (cartItem.productId === productId){
-                return dispatch(updateCartItem(item))
-            }
+    const handleInput = () => {
+        let input = parseInt(document.getElementById("show-input").value);
+        if (input > 0) {
+            setCount(input)
+        } else {
+            setCount("")
         }
-        return dispatch(createCartItem(item))
-
-
-        // console.log(product)
-        // console.log(itemsInCart)
-        // console.log(product.id)
-        // // console.log(itemsInCart[0].productId)
-        // let i = 0;
-        // if (itemsInCart.length === 0){
-        //     const newItem = {
-        //         cartItem: {
-        //             quantity: count,
-        //             productId: productId,
-        //             userId: userId
-        //         }
-        //     }
-        //     return dispatch(createCartItem(newItem))
-        // }else{
-        //     const findItem = itemsInCart.filter( item => {
-        //         return item.productId === productId
-        //     })
-        //     console.log(findItem)
-
-        // }
-        // while (i < itemsInCart.length) {
-        //     if (product.id === itemsInCart[i].productId){
-        //         console.log("item is alreayd in cart")
-        //     }else{
-        //         console.log("hello i am here")
-        //         const newItem = {
-        //             cartItem: {
-        //                 quantity: count,
-        //                 productId: productId,
-        //                 userId: userId
-        //             }
-        //         }
-        //         return dispatch(createCartItem(newItem))
-        //     }
-        // }
-
-        // let repeatItem = false
-        // console.log(item, "hello")
-        // if (!repeatItem) {
-        //     const newItem = {
-        //         cartItem: {
-        //             quantity: count,
-        //             productId: productId,
-        //             userId: userId
-        //         }
-        //     }
-        //     return dispatch(createCartItem(newItem))
-        // }
-        // else if (repeatItem){
-        //     // console.log("i am from update")
-        //     const updateItem = {
-        //         cartItem: {
-        //             quantity: item.quantity + count,
-        //             productId: productId,
-        //             userId: userId
-        //         }
-        //     }
-        //     return dispatch(updateCartItem(updateItem))
-        
     }
     
-    const displayAdded = (e) => {
-        e.preventDefault();
-        // setShowCart(true)
-        // console.log("why no show up")
-        // document.getElementById("add-to-cart").addEventListener("click", setShowCart(true));
+    const {name, photoUrl, price, desc} = product;
 
-        handleAddCart()
+    const handleAddCart = (e) => {
+        e.preventDefault();
+        const userId = user.id;
+
+
+        // if (!user){
+        //     history.pushState("/login")
+        // } 
+
+        if (!item) {
+            const newItem = {
+                cartItem: {
+                    quantity: count,
+                    productId: Number(productId),
+                    userId: userId
+                }
+            }
+            return dispatch(createCartItem(newItem))
+        } else if (item) {
+            console.log("i am updating")
+            const updateItem = {
+                cartItem: {
+                    id: item.id,
+                    quantity: item.quantity + count,
+                    productId: Number(productId),
+                    userId: userId
+                }
+            }
+            console.log("i have updated")
+            return dispatch(updateCartItem(updateItem))
+        }
     }
+
 
 
     return(
@@ -159,12 +124,17 @@ const ProductShow = () => {
                             <i id="product-info-logo" class="fa-solid fa-truck-fast"></i> Free Express over $150
                         </ul>
                     </div>
-                    <div id="add-to-cart-button" onClick={()=>setShowCart(true)}>
-                        <button id="add-to-cart" type="submit" onClick={displayAdded}>ADD TO BAG</button>
+                    <div className="show-quantity">
+                              
+                            <button onClick={() => ((parseInt(count) - 1) > 0 ? setCount(parseInt(count) - 1) : setCount(1))}>-</button>
+                                <input type="text" id="show-input" value={count} onChange={handleInput}></input>
+                            <button onClick={() => setCount(parseInt(count) + 1)}>+</button>
+                              
                     </div>
-                    {/* <div id="added-to-cart-box">
-                        <p id="added-to-cart">Item is Already In Cart!</p>
-                    </div> */}
+                    <div id="add-to-cart-button" onClick={()=>setShowCart(true)}>
+                        <button id="add-to-cart" type="submit" onClick={handleAddCart}>ADD TO BAG</button>
+                    </div>
+                    
                 </div>
             </div>
             <div className="review-div"><ReviewIndex product={product}/></div>

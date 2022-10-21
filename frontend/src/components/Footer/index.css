@@ -16,7 +16,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    width: 32vw;
+    width: 20vw;
     margin-right: 3vw;
 }
 .footer-links{
@@ -35,11 +35,11 @@
 } */
 a.visited{
     text-decoration: none;
-    
+    color: orange;
 }
 .footer-links > img{
-    height: 15vh;
-    width: 9vw;
+    height: 8vh;
+    width: 5vw;
 }
 .top-left{
     text-transform: uppercase;
@@ -58,3 +58,11 @@ a.visited{
 .column-headers{
     font-size: 15px;
 }
+
+#link-text{
+    text-transform: uppercase;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    /* text-decoration: none; */
+}
+
