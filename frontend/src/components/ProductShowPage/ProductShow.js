@@ -17,7 +17,7 @@ const ProductShow = () => {
     const [count, setCount] = useState(1)
     const history = useHistory();
     
-
+    //The problem is that "item" is being returned by 'getCartItem(productId)' as undefined --> CartReducer bug
     console.log(productId, "i am product Id")
     console.log(item, "i am item")
     console.log(product, "i am the product")

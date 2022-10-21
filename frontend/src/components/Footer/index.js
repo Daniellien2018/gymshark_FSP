@@ -19,19 +19,19 @@ const Footer = () =>{
                         <a href="https://github.com/Daniellien2018" target="_blank" rel="noopener noreferrer">
                             <div className="footer-links">
                                 <img src={github} alt="github-logo" />
-                                <p>Github</p>
+                                <p id="link-text">Github</p>
                             </div>
                         </a>
                         <a href="https://www.linkedin.com/in/daniel-lien-7a7b6262/" target="_blank" rel="noopener noreferrer">
                             <div className="footer-links">
                                 <img src={linkedin} alt="linkedin-logo"/>
-                                <p>Linkedin</p>
+                                <p id="link-text">Linkedin</p>
                             </div>
                         </a>
                         <a href="https://www.gymshark.com/" target="_blank" rel="noopener noreferrer">
                             <div className="footer-links">
                                 <img src={gymshark} alt="gymshark-logo" />
-                                <p>Gymshark</p>
+                                <p id="link-text">Gymshark</p>
                             </div>
                         </a>
                     </div>
