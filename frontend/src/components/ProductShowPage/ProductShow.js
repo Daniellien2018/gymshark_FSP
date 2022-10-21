@@ -18,18 +18,13 @@ const ProductShow = () => {
     const history = useHistory();
     
     //The problem is that "item" is being returned by 'getCartItem(productId)' as undefined --> CartReducer bug
-    console.log(productId, "i am product Id")
-    console.log(item, "i am item")
-    console.log(product, "i am the product")
     
     const [showCart, setShowCart] = useState(false);
     
     useEffect(()=>{
-        // dispatch(fetchProduct(productId))
         dispatch(fetchProduct(productId))
         dispatch(fetchCartItems())
-        // dispatch(fetchCartItems())
-        // dispatch(fetchReviews(productId))
+
     }, [productId])
 
     useEffect(() => {
@@ -54,11 +49,7 @@ const ProductShow = () => {
     const handleAddCart = (e) => {
         e.preventDefault();
         const userId = user.id;
-
-
-        // if (!user){
-        //     history.pushState("/login")
-        // } 
+        setShowCart(true)
 
         if (!item) {
             const newItem = {
@@ -70,7 +61,6 @@ const ProductShow = () => {
             }
             return dispatch(createCartItem(newItem))
         } else if (item) {
-            console.log("i am updating")
             const updateItem = {
                 cartItem: {
                     id: item.id,
@@ -79,9 +69,9 @@ const ProductShow = () => {
                     userId: userId
                 }
             }
-            console.log("i have updated")
             return dispatch(updateCartItem(updateItem))
         }
+        
     }
 
 
@@ -124,14 +114,15 @@ const ProductShow = () => {
                             <i id="product-info-logo" class="fa-solid fa-truck-fast"></i> Free Express over $150
                         </ul>
                     </div>
-                    <div className="show-quantity">
-                              
+                    <div id="show-quantity-container">
+                        <label htmlFor="show-quantity-container" id="show-label">Select Quantity</label>
+                        <div className="show-quantity">
                             <button onClick={() => ((parseInt(count) - 1) > 0 ? setCount(parseInt(count) - 1) : setCount(1))}>-</button>
-                                <input type="text" id="show-input" value={count} onChange={handleInput}></input>
+                            <input type="text" id="show-input" value={count} onChange={handleInput}></input>
                             <button onClick={() => setCount(parseInt(count) + 1)}>+</button>
-                              
+                        </div>
                     </div>
-                    <div id="add-to-cart-button" onClick={()=>setShowCart(true)}>
+                    <div id="add-to-cart-button" >
                         <button id="add-to-cart" type="submit" onClick={handleAddCart}>ADD TO BAG</button>
                     </div>
                     

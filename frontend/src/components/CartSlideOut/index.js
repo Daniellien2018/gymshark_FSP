@@ -18,13 +18,7 @@ const CartSlideOut = ({setShowCart}) => {
 
     useEffect( () => {
         dispatch(fetchCartItems())
-        // dispatch(fetchProducts())
     }, [cartItems.length])
-
-    // useEffect( () => {
-    //     dispatch(fetchCartItems())
-    //     dispatch(fetchProducts())
-    // }, [user])
     
     const mapCartItems = () => {
         if (cartItems.length === 0){
@@ -51,8 +45,6 @@ const CartSlideOut = ({setShowCart}) => {
         setShowCart(false)
         history.push("/login")
     }
-
-
 
     const openCheckout = (e) => {
         let ele = document.getElementById('checkout-popup');

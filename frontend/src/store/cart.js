@@ -18,14 +18,9 @@ export const removeItem = cartItem => ({
 })
 //selectors
 export const getCartItem = (productId, id) => state => {
-    console.log(productId, "productId from selector")
-    console.log(id, "if from selector")
     if (!state.cartItems){
         return null
     }else{
-        // console.log("hi from getCartItem")
-        // console.log(state.cartItems)
-        // console.log(Object.values(state.cartItems)[productId])
         return state.cartItems[productId]
     }
 }
@@ -85,9 +80,6 @@ export const deleteCartItem = (cartItemId) => async dispatch => {
 const cartReducer = (state={}, action) => {
     Object.freeze(state);
     const newState = {...state}
-    console.log(action.cartItems, "from cartReducer")
-    console.log(action, "from cartReducer TWO")
-    console.log(action.cartItems, "from cartReducer")
     
     switch(action.type) {
         case RECEIVE_ITEMS:
