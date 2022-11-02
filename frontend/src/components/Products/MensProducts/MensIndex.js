@@ -9,14 +9,11 @@ const MensIndex = () => {
     const dispatch = useDispatch();
 
     let mensProducts = [];
-    // const getMensProducts = products.map(product => {
     products.map(product => {
         if (product.category === "Mens"){
             mensProducts.push(product)
         }
     })
-    // })
-    // console.log(mensProducts)
 
     useEffect(() => {
         dispatch(fetchProducts())

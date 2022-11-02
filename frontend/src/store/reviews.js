@@ -29,8 +29,6 @@ export const getProductReviews = productId => state => {
 };
 
 export const createReview = (review) => async dispatch => {
-    
-    console.log("hi from before csrfFetch")
     const res = await csrfFetch("/api/reviews", {
         method: "POST",
         body: JSON.stringify(review),
@@ -45,9 +43,6 @@ export const createReview = (review) => async dispatch => {
 }
 
 export const updateReview = (reviewId, review) => async dispatch => {
-    // console.log(review)
-    // console.log(review.review.id)
-    // console.log(review.review.authorId)
     const res = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: "PATCH",
         body: JSON.stringify(review),
