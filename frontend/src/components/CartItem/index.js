@@ -11,14 +11,11 @@ import { updateCartItem } from "../../store/cart";
 
 const CartItem = ({cartItem, setSubamount}) => {
     const {quantity, productId, id, userId} = cartItem;
-    // console.log(id)
     const dispatch = useDispatch();
     const product = useSelector(getProduct(cartItem.productId));
     const user = useSelector(state => state.session.user)
     const [count, setCount] = useState(quantity);
-    // const [deleted, setDeleted] = useState(false);
     const history = useHistory();
-    // console.log(user)
 
     useEffect( () => {
         dispatch(fetchProduct(productId))

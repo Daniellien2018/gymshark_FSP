@@ -29,11 +29,8 @@ const ReviewForm = ({setShowReviewForm, product, selectedReview}) => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        // console.log(selectedReview)
-        // console.log(selectedReview.id, "reviewId")
         const reviewData = {review: {id: selectedReview.id, body: body, rating: rating, productId: productId, authorId: sessionUser.id}}
         if (editReview){
-            // debugger
             dispatch(updateReview(selectedReview.id, reviewData))
         }else{
             dispatch(createReview(reviewData))

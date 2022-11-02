@@ -4,10 +4,11 @@ import CartItem from "../CartItem";
 import { fetchCartItems } from "../../store/cart";
 import { getCartItems } from "../../store/cart";
 import { deleteCartItem } from "../../store/cart";
-import { fetchProducts } from "../../store/products";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Redirect, useHistory } from "react-router-dom";
+
+
 
 const CartSlideOut = ({setShowCart}) => {
     const cartItems = useSelector(getCartItems);
@@ -30,10 +31,6 @@ const CartSlideOut = ({setShowCart}) => {
         }
     }
 
-    const subtotal = () => {
-        return cartItems.reduce((acc,ele) => acc + (ele.quantity * ele.price), 0)
-    }
-
     const deleteCart = () => {
         return cartItems.map(cartItem => (
             dispatch(deleteCartItem(cartItem.id))
@@ -46,16 +43,22 @@ const CartSlideOut = ({setShowCart}) => {
         history.push("/login")
     }
 
-    const openCheckout = (e) => {
+    const purchaseItems = (e) => {
+        e.preventDefault();
+        deleteCart()
         let ele = document.getElementById('checkout-popup');
         ele.style.display = 'block'
-        deleteCart()
+  
+    }
+    const closePopOut = (e) => {
+        e.preventDefault();
+        document.getElementById("checkout-popup").style.display = "none"
+        setShowCart(false)
     }
 
     const closeCheckout = (e) => {
         e.preventDefault()
         document.getElementById("checkout-popup").style.display ="none"
-        // deleteCart()
         setShowCart(false)
     }
 
@@ -68,7 +71,7 @@ const CartSlideOut = ({setShowCart}) => {
                         {cartItems.length > 0 ?
                             <div>
                                 <h1 id="cart-title">Cart Items</h1>
-                                    <button id="checkout-button" onClick={openCheckout}>Purchase Items</button>
+                                    <button id="checkout-button" onClick={purchaseItems}>Purchase Items</button>
                                 <hr/> 
                             </div>
                             :
@@ -85,7 +88,7 @@ const CartSlideOut = ({setShowCart}) => {
                 <div id="checkout-popup">
                         <div id="checkout-text-box">
                             <p className="checkout-text">Thank you for shopping GymWhale
-                                <div id="close-checkout-popup" onClick={closeCheckout}>
+                                <div id="close-checkout-popup" onClick={closePopOut}>
                                     <i class="fa-light fa-x"></i>
                                 </div>
                             </p>
