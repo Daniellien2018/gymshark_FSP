@@ -29,6 +29,7 @@
 }
 .navCenter {
     margin-right: 4vw;
+    
 }
 
 .navRight{
@@ -47,8 +48,36 @@
     
 }
 #shop-now{
-    text-decoration: none;
+    /* text-decoration: none;
     margin-left: 5vw;
+    color: black;
+    font-size: 16px;
+    font-family: Helvetica; */
+    margin-left: 5vw;
+    margin-right: 5vw;
+    font-size: 28px;
+    font-weight: bold;
+    background-image: linear-gradient(
+    to right,
+    #000000,
+    #020404 50%,
+    #717171 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+#shop-now:hover{
+    /* font-size: 20px;
+    color: grey; */
+    background-position: 0;
+}
+
+#shop-now:hover::before {
+    width: 100%;
 }
 
 #shop-now > .active > a{
@@ -59,18 +88,24 @@
     border: none;
     background-color: white;
 }
-#shopping-bag:hover{ 
-    font-size: 3vh;
-}
-#magnifying-glass:hover{
-    font-size: 3vh;
-}
+
+
 #shoppping-bag > .active > a{
     cursor: pointer;
     background-color: black;
 }
 
-#profile-button:hover{
-    cursor: pointer;
+#shopping-bag:hover{ 
     font-size: 3vh;
+    cursor: pointer;
+}
+
+#magnifying-glass:hover{
+    font-size: 3vh;
+    cursor: pointer;
+}
+
+#profile-button:hover{
+    font-size: 3vh;
+    cursor: pointer;
 }

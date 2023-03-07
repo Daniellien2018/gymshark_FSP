@@ -54,7 +54,7 @@ function Navigation() {
           <button 
           // onClick={openSidebar}
           >
-            <button id='shopping-bag' exact to="/"><i class="fa-solid fa-bag-shopping" onClick={()=>setShowCart(true)}></i></button>
+            <button id='shopping-bag' exact to="/"><i  class="fa-solid fa-bag-shopping" onClick={()=>setShowCart(true)}></i></button>
           </button>
         </div>
       </div>

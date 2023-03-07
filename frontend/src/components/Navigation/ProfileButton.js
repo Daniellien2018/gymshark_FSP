@@ -26,12 +26,13 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    // window.location.reload(false)
   };
 
   return (
     <>
       <button onClick={openMenu}>
-        <i id="profile-button" className="fa-solid fa-user-circle" />
+        <i id="profile-button" class="fa-regular fa-user" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
