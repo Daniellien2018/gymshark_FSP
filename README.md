@@ -2,13 +2,15 @@
 
 ## Background and Overview
 
-Gymwhale is a recreation of the populat workout-attire fashion brand GymShark. GymWhale aims to bring simplicity and ease for when it comes to shopping for high quality fashion apparel. The purpose of this application is to implement full functionality and recreate design provided by the website. Users will be able to login and creat accounts, as well as browse items to purchase based on categories. Logged-in Users will be able to leave reviews for a product, as well as add products to a cart to purchase. Enjoy clean interface and an enjoyable experience while browsing comfortable workout attire.
+Gymwhale is a recreation of the popular workout-attire fashion brand GymShark. GymWhale aims to bring simplicity and ease for when it comes to shopping for high quality fashion apparel. The purpose of this application is to implement full functionality and recreate design provided by the website. Users will be able to login and creat accounts, as well as browse items to purchase based on categories. Logged-in Users will be able to leave reviews for a product, as well as add products to a cart to purchase. Enjoy clean interface and an enjoyable experience while browsing comfortable workout attire.
 
 ## Live Link 
 - https://gymwhale.herokuapp.com/
 
 ## Functionalities and MVPs
-<img src="/frontend/src/assets/background/apex-mens.jpg" alt="apex-background"/>
+<img src="/frontend/src/assets/backgrounds/gymwhale-background.png" alt="frontpage-background">
+<img src="/frontend/src/assets/backgrounds/apex-mens.jpg" alt="apex-background"/>
+
 - User Authentication (Login, Sign Up, Demo Login)
 - Shopping cart CRUD
 - Reviews CRUD
