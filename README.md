@@ -8,6 +8,7 @@ Gymwhale is a recreation of the populat workout-attire fashion brand GymShark. G
 - https://gymwhale.herokuapp.com/
 
 ## Functionalities and MVPs
+<img src="/frontend/src/assets/background/apex-mens.jpg" alt="apex-background"/>
 - User Authentication (Login, Sign Up, Demo Login)
 - Shopping cart CRUD
 - Reviews CRUD
